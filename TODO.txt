@@ -1,0 +1,21 @@
+CO TRZEBA ZROBIÆ
+-konwersje miêdzy kodowaniami				TOMEK
+-rysowanie grafów                                       <---------------------------------
+-----------------------------------------------------------
+-sprawdzanie sekwencji liczb czy jest ci¹giem graficznym + konstruowanie takiego grafu
+-randomizacja grafów prostych				
+-najwiêksza wspólna sk³adowa
+-tworzenie losowego grafu eulera
+-znajdowanie cyklu eulera
+-generowanie grafów k-regularnych			
+------------------------------------------------------------
+-sprawdzanie czy graf jest hamilotonowski
+-przypisywanie wag krawêdziom
+-algorytm Dijkstry					<-----------------------------------
+-macierz odleg³oœci miêdzy wszystkimi parami wierzcho³ków <---------------------------------
+-wyznaczanie centrum i centrum minimax grafu
+-minimalne drzewo rozpinaj¹ce
+
+CO JEST ZROBIONE
+-generowanie graów losowych
+-kodowanie grafu
