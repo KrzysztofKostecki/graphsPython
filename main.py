@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import tkinter as tk
 import sys
-sys.path.append(r'C:\Users\Szykem2\Desktop\graphsPython')
+sys.path.append(".")
 from generating import *
 
 class mainWindow():
