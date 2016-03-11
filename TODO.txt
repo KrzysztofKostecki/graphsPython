@@ -1,5 +1,5 @@
 CO TRZEBA ZROBIÆ
--konwersje miêdzy kodowaniami				TOMEK
+-konwersje miêdzy kodowaniami			
 -rysowanie grafów                                       <---------------------------------
 -----------------------------------------------------------
 -sprawdzanie sekwencji liczb czy jest ci¹giem graficznym + konstruowanie takiego grafu
