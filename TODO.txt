@@ -1,3 +1,5 @@
+Po pierwsze trzeba zrobic zeby dzialalo poprawnie extern "C"
+
 CO TRZEBA ZROBIÆ
 -konwersje miêdzy kodowaniami				TOMEK
 -rysowanie grafów                                       <---------------------------------

@@ -1,39 +1,62 @@
+#!/usr/bin/python3
 from tkinter import *
 import matplotlib.pyplot as plt
 import networkx as nx
+from ctypes import cdll
+lib = cdll.LoadLibrary('./graphs.so')
 
-root = Tk()
-root.resizable(width=FALSE, height=FALSE)
-root.geometry('300x200')
+class GenWindow():
+	def __init__(self):
+		self.root = Tk()
+		self.root.resizable(width=FALSE, height=FALSE)
+		self.root.geometry('340x300')
 
-var1  = StringVar()
-var1.set("ilosc krawedzi") # default selection
+		self.var1  = StringVar()
+		self.var1.set("ilosc krawedzi") # default selection
 
-menu1 = OptionMenu(root, var1, "ilosc krawedzi", "prawdopodobienstwo")
-menu1.grid(row=1, column=0)
+		self.menu1 = OptionMenu(self.root, self.var1, "ilosc krawedzi", "prawdopodobienstwo")
+		self.menu1.grid(row=1, column=0)
 
-Label(root, text="ilosc wierzcholkow").grid(row=1, column=1)
+		Label(self.root, text="ilosc wierzcholkow").grid(row=1, column=1)
 
-e1 = Entry(root)
-e2 = Entry(root)
+		self.e1 = Entry(self.root)
+		self.e1.grid(row=2, column=0)
+		self.e2 = Entry(self.root)
+		self.e2.grid(row=2, column=1)
 
-e1.grid(row=2, column=0)
-e2.grid(row=2, column=1)
+		self.b = Button(self.root, text="generuj", width=20, command= lambda: self.gen(self.e2.get(), self.e1.get()))
+		self.b.grid(row=3, columnspan=2)
+		self.H = nx.Graph()
 
 
-def gen(vertex, param):
-	if (var1.get() == "prawdopodobienstwo"):
-		H = nx.gnp_random_graph(int(vertex), float(param))
-	else:
-		H = nx.gnm_random_graph(int(vertex), int(param))
-	pos = nx.circular_layout(H)
-	nx.draw_networkx_nodes(H, pos)
-	nx.draw_networkx_edges(H, pos)
-	nx.draw_networkx_labels(H, pos)
-	plt.show()
-	plt.axis('off')
+	def gen(self, vertex, param):
 
-b = Button(root, text="generuj", width=20, command= lambda: gen(e2.get(), e1.get()))
-b.grid(row=3)
+		try:
+			if ((type(vertex)== type(None)) or (type(param) == type(None))):
+				raise Exception
 
-mainloop( )
+			if (self.var1.get() == "prawdopodobienstwo"):
+				self.H = nx.gnp_random_graph(int(vertex), float(param))
+			else:
+				self.H = nx.gnm_random_graph(int(vertex), int(param))
+
+			pos = nx.circular_layout(self.H)
+			nx.draw_networkx_nodes(self.H, pos)
+			nx.draw_networkx_edges(self.H, pos)
+			nx.draw_networkx_labels(self.H, pos)
+			plt.show()
+			plt.axis('off')
+
+		except:
+			print ("BLEDNE PARAMETRY")
+
+		
+
+	def loop(self):
+		self.root.mainloop()
+
+if __name__ == "__main__":
+	w = GenWindow()
+	f = lib.create_object()
+	print(type(f))
+	w.loop()
