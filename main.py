@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import tkinter as tk
 import sys
-sys.path.append(".")
+sys.path.append('..')
 from generating import *
 
 class mainWindow():
@@ -12,9 +12,13 @@ class mainWindow():
 		
     def ps(self):
         pass
+
+    def lab1(self):
+        w=GenWindow()
+        w.loop()
 	
     def make(self):
-        lab1button = tk.Button(self.root, text="Laboratorium1", width=20, height=5, command= lambda: lab1()).grid(row=1, column=0)
+        lab1button = tk.Button(self.root, text="Laboratorium1", width=20, height=5, command= self.lab1).grid(row=1, column=0)
         lab2button = tk.Button(self.root, text="Laboratorium2", width=20, height=5, command= self.ps).grid(row=1, column=1)
         lab3button = tk.Button(self.root, text="Laboratorium3", width=20, height=5, command= self.ps).grid(row=2, column=0)
         lab4button = tk.Button(self.root, text="Laboratorium4", width=20, height=5, command= self.ps).grid(row=2, column=1)
