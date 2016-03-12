@@ -78,8 +78,9 @@ class GenWindow():
         nx.draw_networkx_edges(self.H, pos)
         nx.draw_networkx_labels(self.H, pos)
         write(self.H)
-        plt.show()
         plt.axis('off')
+        plt.show()
+        
 
     def loop(self):
         self.root.mainloop()
