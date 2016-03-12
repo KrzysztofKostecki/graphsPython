@@ -1,23 +1,30 @@
-Po pierwsze trzeba zrobic zeby dzialalo poprawnie extern "C"
+Po pierwsze trzeba zrobic zeby dzialalo poprawnie extern "C" bo mi wywala klase jako zwyk³ego inta(??)
 
-CO TRZEBA ZROBIÆ
--konwersje miêdzy kodowaniami			
--rysowanie grafów                                       <---------------------------------
------------------------------------------------------------
+CO TRZEBA ZROBIÆ:
+
+--------------------------lab1---------------------------------
+-konwersje miêdzy kodowaniami		
+	                                
+--------------------------lab2---------------------------------
 -sprawdzanie sekwencji liczb czy jest ci¹giem graficznym + konstruowanie takiego grafu
 -randomizacja grafów prostych				
 -najwiêksza wspólna sk³adowa
 -tworzenie losowego grafu eulera
 -znajdowanie cyklu eulera
--generowanie grafów k-regularnych			
-------------------------------------------------------------
+-generowanie grafów k-regularnych	
+		
+---------------------------lab3---------------------------------
 -sprawdzanie czy graf jest hamilotonowski
 -przypisywanie wag krawêdziom
--algorytm Dijkstry					<-----------------------------------
--macierz odleg³oœci miêdzy wszystkimi parami wierzcho³ków <---------------------------------
+-algorytm Dijkstry					   
+-macierz odleg³oœci miêdzy wszystkimi parami wierzcho³ków  
 -wyznaczanie centrum i centrum minimax grafu
 -minimalne drzewo rozpinaj¹ce
 
-CO JEST ZROBIONE
+
+CO JEST ZROBIONE:
+
+--------------------------lab1---------------------------------
 -generowanie graów losowych
 -kodowanie grafu
+-rysowanie grafów  
