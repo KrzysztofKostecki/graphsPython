@@ -12,6 +12,7 @@ namespace graphs{
 				_matrix[i] = new int[y];
 			}
 		}
+
 		virtual ~Matrix() = 0
 		{
 			for (unsigned i = 0; i < _xSize; i++)

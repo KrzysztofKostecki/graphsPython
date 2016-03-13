@@ -28,7 +28,11 @@ class mainWindow():
 		
     def loop(self):
         self.root.mainloop()
-
+def run():
+	window = mainWindow()
+	window.make()
+	window.loop()
+	
 if __name__ == "__main__":
 	window = mainWindow()
 	window.make()

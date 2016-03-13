@@ -89,7 +89,7 @@ class GenWindow():
         return self.H
     
 def write(H):
-    with open('Graphs/addList.txt', 'w') as f:
+    with open('adjList.txt', 'w') as f:
         for i in H.adjacency_list():
             f.write(str(i) + "\n")
 			

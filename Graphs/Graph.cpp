@@ -69,11 +69,6 @@ namespace graphs {
 				}
 			}
 		}
-		for (auto i : _edges)
-		{
-
-			std::cout << *i << std::endl;
-		}
 	}
 
 

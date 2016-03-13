@@ -13,8 +13,6 @@ namespace graphs {
 		double _cost;
 		Vertex a, b;
 	};
-
-
 }
 
 

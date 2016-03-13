@@ -1,8 +1,12 @@
-﻿Build started 2016-03-12 19:35:04.
+﻿Build started 2016-03-13 15:27:40.
      1>Project "C:\Users\Szykem2\Desktop\graphsPython\Graphs\Graphs.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Pliki programów (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Szykem2\Desktop\graphsPython\\deps\boost library for c++" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Vertex.cpp
-         Vertex.cpp
+         D:\Pliki programów (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Szykem2\Desktop\graphsPython\\deps\boost library for c++" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Graph.cpp main.cpp
+         Graph.cpp
+         Generating Code...
+         Compiling...
+         main.cpp
+         Generating Code...
        Link:
          D:\Pliki programów (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Szykem2\Desktop\graphsPython\Debug\Graphs.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Szykem2\Desktop\graphsPython\/deps/boost library for c++/lib" python3.lib python34.lib python34_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Szykem2\Desktop\graphsPython\Debug\Graphs.pdb" /TLBID:1 /ENTRY:"main" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Szykem2\Desktop\graphsPython\Debug\Graphs.lib" /MACHINE:X86 Debug\AdjacencyMatrix.obj
          Debug\Edge.obj
@@ -16,4 +20,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.84
+Time Elapsed 00:00:01.86
