@@ -8,16 +8,16 @@
 namespace graphs {
 	Graph::Graph(const AdjacencyList& adj) : _adjacencyList(new AdjacencyList(adj))
 	{
+		parseList();
 		adjacencyListToIncidenceMatrix();
 		incidenceMatrixToAdjacencyMatrix();
-		parseList();
 	}
 
 	Graph::Graph(const AdjacencyMatrix& adj) : _adjacencyMatrix(new AdjacencyMatrix(adj))
 	{
 		adjacencyMatrixToAdjacencyList();
-		adjacencyListToIncidenceMatrix();
 		parseList();
+		adjacencyListToIncidenceMatrix();
 	}
 
 
@@ -36,17 +36,39 @@ namespace graphs {
 	{
 	}
 
-	void Graph::adjacencyListToIncidenceMatrix() const
+	void Graph::adjacencyListToIncidenceMatrix()
 	{
-		
+		int ** a = new int*[_edges.size()];
+		for (int j = 0; j < _edges.size(); j++)
+		{
+			a[j] = new int[_verticies.size()];
+			for (int k = 0; k < _edges.size(); k++)
+			{
+				a[j][k] = 0;
+			}
+		}
+
+		for (int i = 0; i < _verticies.size(); i++)
+		{
+			for (auto j = (*_adjacencyList)[i].begin(); j != (*_adjacencyList)[i].end(); j++)
+			{
+
+				a[i][*j] = 1;
+				std::cout << i << std::endl;
+
+			}
+
+		}
+
+		_incidenceMatrix = std::auto_ptr<IncidenceMatrix>(new IncidenceMatrix(_edges.size(), _verticies.size(), a));
 	}
 
-	void Graph::adjacencyMatrixToAdjacencyList() const
+	void Graph::adjacencyMatrixToAdjacencyList()
 	{
 
 	}
 
-	void Graph::incidenceMatrixToAdjacencyMatrix() const
+	void Graph::incidenceMatrixToAdjacencyMatrix()
 	{
 
 	}
@@ -75,6 +97,10 @@ namespace graphs {
 	AdjacencyList Graph::getAdjListFromFile(std::string file)
 	{
 		std::ifstream istr(file);
+		if (istr.fail()){
+			std::cout << "Nie udalo sie otworzyc pliku" << std::endl;
+			std::exit(-1);
+		}
 		std::string str;
 		unsigned i = 0;
 		AdjacencyList t;
@@ -106,7 +132,6 @@ namespace graphs {
 
 			while (str.find(',') < str.length()-1 && str.find(',') != 0)
 			{	
-				
 				int npos = str.find(',');
 				std::string liczba = str.substr(1, npos-1);
 				t[i].push_back(std::atoi(liczba.c_str()));

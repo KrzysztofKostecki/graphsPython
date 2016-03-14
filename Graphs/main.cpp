@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	std::auto_ptr<graphs::Graph> ptr = graphs::Graph::getRandomGraph();
 	ptr->printAdjacencyList();
 	//ptr->printAdjacencyMatrix();
-	//ptr->printIncidenceMatrix();
+	ptr->printIncidenceMatrix();
 	std::cin.get();
 	return 0;
 }

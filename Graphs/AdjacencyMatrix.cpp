@@ -16,7 +16,7 @@ namespace graphs {
 	{
 		for (unsigned i = 0; i < x; i++)
 		{
-			for (unsigned j = 0; i < y; j++)
+			for (unsigned j = 0; j < y; j++)
 			{
 				_matrix[i][j] = tab[i][j];
 			}

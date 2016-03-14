@@ -6,6 +6,8 @@ namespace graphs{
 	class Matrix abstract {
 	public:
 		Matrix(int x, int y) {
+			_xSize = x;
+			_ySize = y;
 			_matrix = new int*[x];
 			for (int i = 0; i < x; i++)
 			{
@@ -29,7 +31,7 @@ namespace graphs{
 						std::cout << "| ";
 					std::cout << _matrix[i][j] << " ";
 				}
-				std::cout << "|" << std::endl;
+				std::cout << " |" << std::endl;
 			}
 		}
 

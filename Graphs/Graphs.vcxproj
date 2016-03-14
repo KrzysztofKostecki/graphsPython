@@ -85,7 +85,6 @@
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="IncidenceMatrix.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Source.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
