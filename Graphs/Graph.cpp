@@ -38,17 +38,17 @@ namespace graphs {
 
 	void Graph::adjacencyListToIncidenceMatrix()
 	{
-		int ** a = new int*[_edges.size()];
-		for (int j = 0; j < _edges.size(); j++)
+		int** a = new int*[_edges.size()];
+		for (unsigned j = 0; j < _edges.size(); j++)
 		{
 			a[j] = new int[_verticies.size()];
-			for (int k = 0; k < _edges.size(); k++)
+			for (unsigned k = 0; k < _verticies.size(); k++)
 			{
 				a[j][k] = 0;
 			}
 		}
 
-		for (int i = 0; i < _verticies.size(); i++)
+		for (unsigned i = 0; i < _edges.size(); i++)
 		{
 			for (auto j = (*_adjacencyList)[i].begin(); j != (*_adjacencyList)[i].end(); j++)
 			{

@@ -12,6 +12,10 @@ namespace graphs{
 			for (int i = 0; i < x; i++)
 			{
 				_matrix[i] = new int[y];
+				for (int j = 0; j < y; j++)
+				{
+					_matrix[i][j] = 0;
+				}
 			}
 		}
 

@@ -33,10 +33,10 @@ namespace graphs {
 		//random graph generator
 		static std::auto_ptr<Graph> getRandomGraph()
 		{
-			/*Py_Initialize();
+			Py_Initialize();
 			std::string t = "import sys\nsys.path.append('..')\nimport generating as gen\ngen.run()";
 			PyRun_SimpleString(t.c_str());
-			Py_Finalize();*/
+			Py_Finalize();
 			AdjacencyList tt = Graph::getAdjListFromFile("adjList.txt");
 			
 			return std::auto_ptr<Graph>(new Graph(tt));
