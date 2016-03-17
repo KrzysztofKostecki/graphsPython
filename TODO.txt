@@ -1,4 +1,4 @@
-Po pierwsze trzeba zrobic zeby dzialalo poprawnie extern "C" bo mi wywala klase jako zwykłego inta(??)
+﻿Po pierwsze trzeba zrobic zeby dzialalo poprawnie extern "C" bo mi wywala klase jako zwykłego inta(??)
 
 CO TRZEBA ZROBIĆ:
 
@@ -6,18 +6,18 @@ CO TRZEBA ZROBIĆ:
 -konwersje między kodowaniami								Tomek	
 	                                
 --------------------------lab2---------------------------------
--sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu
--randomizacja grafów prostych
+-sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu 	Kuba
+-randomizacja grafów prostych								Kuba
 -największa wspólna składowa
--tworzenie losowego grafu eulera
+-tworzenie losowego grafu eulera							Kuba
 -znajdowanie cyklu eulera
 -generowanie grafów k-regularnych							Ja
 		
 ---------------------------lab3---------------------------------
 -sprawdzanie czy graf jest hamilotonowski
--przypisywanie wag krawędziom								Ja
+-przypisywanie wag krawędziom								
 -algorytm Dijkstry									Ja			   
--macierz odległości między wszystkimi parami wierzchołków  				Ja
+-macierz odległości między wszystkimi parami wierzchołków  				
 -wyznaczanie centrum i centrum minimax grafu
 -minimalne drzewo rozpinające
 

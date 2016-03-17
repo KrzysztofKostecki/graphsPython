@@ -89,6 +89,7 @@ class GenWindow():
         return self.H
     
 def write(H):
+    nx.write_adjlist(H, "adListPython.txt")
     with open('adjList.txt', 'w') as f:
         for i in H.adjacency_list():
             f.write(str(i) + "\n")
