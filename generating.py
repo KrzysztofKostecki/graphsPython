@@ -30,14 +30,20 @@ class GenWindow():
         self.b = Button(self.root, text="generuj", width=20, command= lambda: self.gen(self.e2.get(), self.e1.get()))
         self.b.grid(row=3, columnspan=2)
    
-    def gene(self, n, m):
-        G=nx.Graph()
+    def randomGraphEdges(self, n, m, directed=False):
+        if directed:
+            G=nx.DiGraph()
+        else:
+            G=nx.Graph()
         G.add_nodes_from(range(n))
 
         if n==1:
             return G
         max_edges=n*(n-1)
-        max_edges/=2.0
+        if not directed:
+            max_edges/=2.0
+        if m>=max_edges:
+            return nx.complete_graph(n,create_using=G)
 
         nlist=G.nodes()
         edge_count=0
@@ -52,15 +58,23 @@ class GenWindow():
                 edge_count=edge_count+1
         return G
 		
-    def genp(self, n, p):
-        G=nx.Graph()
+    def randomGraphProp(self, n, p, directed=False):
+
+        if directed:
+            G=nx.DiGraph()
+        else:
+            G=nx.Graph()
         G.add_nodes_from(range(n))
         if p<=0:
             return G
         if p>=1:
-            return nx.generators.classic.complete_graph(n,create_using=G)
+            return nx.complete_graph(n,create_using=G)
 
-        edges=itertools.combinations(range(n),2)
+        if G.is_directed():
+            edges=itertools.permutations(range(n),2)
+        else:
+            edges=itertools.combinations(range(n),2)
+
         for e in edges:
             if random.random() < p:
                 G.add_edge(*e)
@@ -68,9 +82,9 @@ class GenWindow():
        
     def gen(self, vertex, param):
         if (self.var1.get() == "prawdopodobienstwo"):
-            self.H = self.genp(int(vertex), float(param))
+            self.H = self.randomGraphProp(int(vertex), float(param))
         else:
-            self.H = self.gene(int(vertex), int(param))
+            self.H = self.randomGraphEdges(int(vertex), int(param))
 
         plt.clf()
         pos = nx.circular_layout(self.H)
@@ -80,7 +94,6 @@ class GenWindow():
         write(self.H)
         plt.axis('off')
         plt.show()
-        
 
     def loop(self):
         self.root.mainloop()

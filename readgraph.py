@@ -1,18 +1,17 @@
 import networkx as nx
 import matplotlib.pyplot as npl
 
-with open("adjList.txt", 'r') as f:
-    tab = f.readlines()
-	
-print (tab)
-adjlist = []
-x = 0
-for i in tab:
-    i = str(x) + " " + i[1:-2].replace(',', '')
-    adjlist.append(i)
-    x += 1
-print (adjlist)
+def read_from_file():
+    with open("adjList.txt", 'r') as f:
+        tab = f.readlines()
+		
+    print (tab)
+    adjlist = []
+    x = 0
+    for i in tab:
+        i = str(x) + " " + i[1:-2].replace(',', '')
+        adjlist.append(i)
+        x += 1
+    print (adjlist)
 
-G = nx.parse_adjlist(adjlist)
-nx.draw(G)
-npl.show()
+    return nx.parse_adjlist(adjlist)
