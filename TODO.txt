@@ -1,5 +1,3 @@
-﻿Po pierwsze trzeba zrobic zeby dzialalo poprawnie extern "C" bo mi wywala klase jako zwykłego inta(??)
-
 CO TRZEBA ZROBIĆ:
 
 --------------------------lab1---------------------------------
@@ -14,6 +12,7 @@ CO TRZEBA ZROBIĆ:
 -generowanie grafów k-regularnych								Ja
 												
 ---------------------------lab3---------------------------------				
+<<<<<<< HEAD
 -sprawdzanie czy graf jest hamilotonowski							
 -przypisywanie wag krawędziom									
 -algorytm Dijkstry										Ja
@@ -22,6 +21,16 @@ CO TRZEBA ZROBIĆ:
 -minimalne drzewo rozpinające									
 												
 ---------------------------lab4---------------------------------				
+=======
+-sprawdzanie czy graf jest hamilotonowski							Krzysiek
+-przypisywanie wag krawędziom									Krzysiek
+-algorytm Dijkstry										Krzysiek		   
+-macierz odległości między wszystkimi parami wierzchołków  					Krzysiek
+-wyznaczanie centrum i centrum minimax grafu							Krzysiek
+-minimalne drzewo rozpinające									Krzysiek
+
+---------------------------lab4---------------------------------
+>>>>>>> ed76d1fa74282fa11963752264403c6aef114c17
 -kodowanie digrafów										
 -zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			
 -największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		
