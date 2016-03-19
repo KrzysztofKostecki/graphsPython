@@ -29,6 +29,24 @@ class GenWindow():
 
         self.b = Button(self.root, text="generuj", width=20, command= lambda: self.gen(self.e2.get(), self.e1.get()))
         self.b.grid(row=3, columnspan=2)
+
+    def loop(self):
+        self.root.mainloop()
+   
+    def gen(self, vertex, param):
+        if (self.var1.get() == "prawdopodobienstwo"):
+            self.H = self.randomGraphProp(int(vertex), float(param))
+        else:
+            self.H = self.randomGraphEdges(int(vertex), int(param))
+
+        plt.clf()
+        pos = nx.circular_layout(self.H)
+        nx.draw_networkx_nodes(self.H, pos)
+        nx.draw_networkx_edges(self.H, pos)
+        nx.draw_networkx_labels(self.H, pos)
+        write(self.H)
+        plt.axis('off')
+        plt.show()
    
     def randomGraphEdges(self, n, m, directed=False):
         if directed:
@@ -80,27 +98,8 @@ class GenWindow():
                 G.add_edge(*e)
         return G
        
-    def gen(self, vertex, param):
-        if (self.var1.get() == "prawdopodobienstwo"):
-            self.H = self.randomGraphProp(int(vertex), float(param))
-        else:
-            self.H = self.randomGraphEdges(int(vertex), int(param))
 
-        plt.clf()
-        pos = nx.circular_layout(self.H)
-        nx.draw_networkx_nodes(self.H, pos)
-        nx.draw_networkx_edges(self.H, pos)
-        nx.draw_networkx_labels(self.H, pos)
-        write(self.H)
-        plt.axis('off')
-        plt.show()
-
-    def loop(self):
-        self.root.mainloop()
-		
-    def get(self):
-        return self.H
-    
+	
 def write(H):
     nx.write_adjlist(H, "adListPython.txt")
     with open('adjList.txt', 'w') as f:

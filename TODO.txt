@@ -3,9 +3,9 @@
 CO TRZEBA ZROBIĆ:
 
 --------------------------lab1---------------------------------
--konwersje między kodowaniami									Tomek	
-	                                
---------------------------lab2---------------------------------
+-konwersje między kodowaniami									Tomel
+	                                							
+--------------------------lab2---------------------------------					
 -sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu 		Kuba
 -randomizacja grafów prostych									Kuba
 -największa wspólna składowa									
@@ -16,12 +16,12 @@ CO TRZEBA ZROBIĆ:
 ---------------------------lab3---------------------------------				
 -sprawdzanie czy graf jest hamilotonowski							
 -przypisywanie wag krawędziom									
--algorytm Dijkstry										Ja			   
+-algorytm Dijkstry										Ja
 -macierz odległości między wszystkimi parami wierzchołków  					
 -wyznaczanie centrum i centrum minimax grafu							
 -minimalne drzewo rozpinające									
-
----------------------------lab4---------------------------------
+												
+---------------------------lab4---------------------------------				
 -kodowanie digrafów										
 -zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			
 -największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		
