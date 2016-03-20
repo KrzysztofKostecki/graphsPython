@@ -1,5 +1,11 @@
 ﻿CO TRZEBA ZROBIĆ:
+<<<<<<< HEAD
 	                                							
+=======
+
+--------------------------lab1---------------------------------
+			!!DONE!!
+>>>>>>> d162bcc24bee7c6e23eb22ac21c0ef3004293059
 --------------------------lab2---------------------------------					
 -największa wspólna składowa									
 -tworzenie losowego grafu eulera								Kuba
@@ -14,8 +20,8 @@
 -minimalne drzewo rozpinające									Krzysiek
 
 ---------------------------lab4---------------------------------
--kodowanie digrafów										
--zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			
+-kodowanie digrafów										Tomek
+-zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			Tomek
 -największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		
 -algorytm Bellmana-Forda									Tomek
 -algorytm Johnsona										Tomek
@@ -27,13 +33,17 @@
 
 CO JEST ZROBIONE:
 
---------------------------lab1---------------------------------
+--------------------------lab1--------------------------------- DONE
 -generowanie graów losowych
 -kodowanie grafu
 -konwersje między kodowaniami
 -rysowanie grafów  
+-konwersje miedzy kodowaniami
 
 --------------------------lab2---------------------------------	
 -generowanie grafów k-regularnych
+<<<<<<< HEAD
 -randomizacja grafów prostych
 -sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu 	
+=======
+>>>>>>> d162bcc24bee7c6e23eb22ac21c0ef3004293059
