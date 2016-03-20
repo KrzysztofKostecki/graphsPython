@@ -1,11 +1,8 @@
 ﻿CO TRZEBA ZROBIĆ:
-<<<<<<< HEAD
-	                                							
-=======
 
 --------------------------lab1---------------------------------
 			!!DONE!!
->>>>>>> d162bcc24bee7c6e23eb22ac21c0ef3004293059
+
 --------------------------lab2---------------------------------					
 -największa wspólna składowa									
 -tworzenie losowego grafu eulera								Kuba
@@ -45,5 +42,4 @@ CO JEST ZROBIONE:
 <<<<<<< HEAD
 -randomizacja grafów prostych
 -sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu 	
-=======
->>>>>>> d162bcc24bee7c6e23eb22ac21c0ef3004293059
+
