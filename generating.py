@@ -5,10 +5,11 @@ import networkx as nx
 import itertools
 import random
 import math
+from Window import *
 
-class GenWindow():
+class GenWindow(Window):
     def __init__(self):
-        self.root = Tk()
+        super(GenWindow, self).__init__()
         self.root.wm_title("Generowanie grafow losowych")
         self.H = nx.Graph()
         self.make()

@@ -1,5 +1,5 @@
 import networkx as nx
-import matplotlib.pyplot as npl
+import matplotlib.pyplot as plt
 
 def read_from_file():
     with open("adjList.txt", 'r') as f:

@@ -7,6 +7,7 @@ namespace graphs {
 		Vertex(int s) : label(s) {}
 		~Vertex(){}
 		friend std::ostream& operator<< (std::ostream& scr, const Vertex& obj);
+		const int getLabel(){ return label; }
 	private:
 		const int label;
 	};

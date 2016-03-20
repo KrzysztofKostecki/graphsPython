@@ -8,6 +8,10 @@ namespace graphs {
 	public:
 		Edge(const Vertex& v1, const Vertex& v2) : a(v1), b(v2){}
 		~Edge(){}
+
+		Vertex getVertexA() { return a; }
+		Vertex getVertexB() { return b; }
+
 		friend std::ostream& operator<< (std::ostream& scr, const graphs::Edge& obj);
 	private:
 		double _cost;

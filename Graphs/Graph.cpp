@@ -47,30 +47,110 @@ namespace graphs {
 				a[j][k] = 0;
 			}
 		}
-
-		for (unsigned i = 0; i < _edges.size(); i++)
+		int j = 0;
+		for (auto i : _edges)
 		{
-			for (auto j = (*_adjacencyList)[i].begin(); j != (*_adjacencyList)[i].end(); j++)
-			{
-
-				a[i][*j] = 1;
-				std::cout << i << std::endl;
-
-			}
-
+			a[j][((i->getVertexA()).getLabel())] = 1;
+			a[j][(i->getVertexB()).getLabel()] = 1;
+			j++;
 		}
 
-		_incidenceMatrix = std::auto_ptr<IncidenceMatrix>(new IncidenceMatrix(_edges.size(), _verticies.size(), a));
-	}
-
-	void Graph::adjacencyMatrixToAdjacencyList()
-	{
-
+		_incidenceMatrix = std::auto_ptr<IncidenceMatrix>(new IncidenceMatrix((unsigned)_edges.size(), (unsigned)_verticies.size(), a));
 	}
 
 	void Graph::incidenceMatrixToAdjacencyMatrix()
 	{
 
+		int **a = getIncidenceMatrix().getMatrix();
+
+		/*int** a = new int*[getIncidenceMatrix().getXSize()];
+		for (unsigned j = 0; j < getIncidenceMatrix().getXSize(); j++)
+		{
+		a[j] = new int[getIncidenceMatrix().getYSize()];
+		for (unsigned k = 0; k < getIncidenceMatrix().getYSize(); k++)
+		{
+		a[j][k] = getIncidenceMatrix().getMatrix()[j][k];
+		}
+		}
+		*/
+
+
+		int** b = new int*[_verticies.size()];
+		for (unsigned j = 0; j < _verticies.size(); j++)
+		{
+			b[j] = new int[_verticies.size()];
+			for (unsigned k = 0; k < _verticies.size(); k++)
+			{
+				b[j][k] = 0;
+			}
+		}
+		int q = 0;
+		int w = 0;
+
+		for (unsigned j = 0; j < getIncidenceMatrix().getXSize(); j++)
+		{
+			for (unsigned k = 0; k < getIncidenceMatrix().getYSize(); k++)
+			{
+				if (a[j][k] == 1)
+				{
+					q = k;
+					break;
+				}
+			}
+			for (unsigned k = 0; k < getIncidenceMatrix().getYSize(); k++)
+			{
+				if (a[j][k] == 1)
+					w = k;
+			}
+
+			b[q][w] = 1;
+			b[w][q] = 1;
+
+		}
+
+
+		//MOZE SIE PRZYDAC POTEM
+		/* int k =0;
+		for (unsigned i = 0; i < getIncidenceMatrix().getXSize(); i++)
+		{
+		for (unsigned j = 0; j < getIncidenceMatrix().getYSize(); j++)
+		{
+		if (getIncidenceMatrix().getMatrix()[i][j]==1)
+		a[j][i]=1;
+		}
+		k++;
+		}*/
+
+
+
+
+		/* for (unsigned i = 0; i < (*_adjacencyList).size(); i++)
+		{
+		for (std::list<int>::iterator j = (*_adjacencyList)[i].begin(); j != (*_adjacencyList)[i].end(); j++)
+		{
+		a[i][*j]=1;
+		}
+
+		}*/
+
+		_adjacencyMatrix = std::auto_ptr<AdjacencyMatrix>(new AdjacencyMatrix((unsigned)_verticies.size(), (unsigned)_verticies.size(), b));
+	}
+
+	void Graph::adjacencyMatrixToAdjacencyList()
+	{
+		AdjacencyList tmp;
+
+		for (unsigned j = 0; j < _verticies.size(); j++)
+		{
+			std::list<int> a;
+			tmp.push_back(a);
+			for (unsigned k = 0; k < _verticies.size(); k++)
+			{
+				if (getAdjacencyMatrix().getMatrix()[j][k] == 1)
+					tmp[j].push_back(k);
+			}
+		}
+		_adjacencyList = std::auto_ptr<AdjacencyList>(new AdjacencyList(tmp));
 	}
 
 	void Graph::parseList()
