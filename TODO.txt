@@ -18,8 +18,8 @@
 -minimalne drzewo rozpinające									Krzysiek
 
 ---------------------------lab4---------------------------------
--kodowanie digrafów										
--zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			
+-kodowanie digrafów										Tomek
+-zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			Tomek
 -największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		
 -algorytm Bellmana-Forda									Tomek
 -algorytm Johnsona										Tomek
