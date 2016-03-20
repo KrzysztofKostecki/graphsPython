@@ -22,9 +22,9 @@
 -kodowanie digrafów										
 -zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			
 -największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		
--algorytm Bellmana-Forda									
--algorytm Johnsona										
--algorytm Floyda-Warshalla									
+-algorytm Bellmana-Forda									Tomek
+-algorytm Johnsona										Tomek
+-algorytm Floyda-Warshalla									Tomek
 -losowy digraf acykliczny									
 -sortowanie topologiczne									
 
