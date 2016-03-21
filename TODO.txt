@@ -4,9 +4,7 @@
 			!!DONE!!
 
 --------------------------lab2---------------------------------					
--największa wspólna składowa									
--tworzenie losowego grafu eulera								Kuba
--znajdowanie cyklu eulera									Ja
+-największa wspólna składowa									Ja
 -sprawdzanie czy graf jest hamiltonowski(mały graf)
 								
 ---------------------------lab3---------------------------------				
@@ -41,4 +39,5 @@ CO JEST ZROBIONE:
 -generowanie grafów k-regularnych
 -randomizacja grafów prostych
 -sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu 	
-
+-znajdowanie cyklu eulera
+-tworzenie losowego grafu eulera
