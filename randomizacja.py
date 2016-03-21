@@ -78,13 +78,13 @@ def WczytajMacierz(sciezka):
 	
 
 def Wczytaj():
-	path = str(input('Podaj nazwe pliku/sciezke: '))
+	path = 'files/macierz.txt'
 	Matrix = WczytajMacierz(path)
 
 
 	while True:
 		ask  = str(input('Przeprowadzic randomizacje? [Y/N]'))
-		if ask == 'Y':
+		if ask.lower() == 'y':
 			print('Po randomizacji:')
 			NewMatrix = Randomize(Matrix)
 
@@ -94,7 +94,7 @@ def Wczytaj():
 				print('')
 			break
 
-		if ask == 'N':
+		if ask.lower() == 'N':
 			print('No Random')
 			NewMatrix = []
 			break
@@ -102,9 +102,12 @@ def Wczytaj():
 
 	while True:
 		ask  = str(input('Zapisac do nowego pliku? [Y/N]'))
-		if ask == 'Y':
+		if ask.lower() == 'y':
 			cg.WriteToFile(NewMatrix,'randmacierz.txt')
 			break
-		if ask == 'N':
+		if ask.lower() == 'n':
 			print('Brak zapisu')
 			break
+
+def run():
+    print("running")

@@ -1,6 +1,9 @@
 import randomizacja as rnd
 import ciaggraficzny as cg
 import kregular as kreg
+import randomEulerGraph as reuler
+import eulerCircuit as ec
+import longestConnectedGraph as lcg
 from Window import *
 
 class Lab2Window(Window):
@@ -10,24 +13,24 @@ class Lab2Window(Window):
         self.make()
     
     def KRegularGraph(self):
-        print ("k regular graph")
+        kreg.run()
         
     def graphSeq(self):
-        print ("check graph sequence")
+        cg.run()
     
     def randomEuler(self):
-        print ("generate Eulerian graph")
+        reuler.run()
         
     def EulerCircut(self):
-        print ("Finding Euler Circut")
+        ec.run()
         
     def LongestConnectedGraph(self):
-        print ("LongestConnectedGraph")
+        lcg.run()
     
     def make(self):
         z1button = tk.Button(self.root, text="Generuj graf k-regularny", width=20, height=5, command= self.KRegularGraph).grid(row=1, column=0)
-        lz2button = tk.Button(self.root, text="Ciag graficzny i randomizacja", width=20, height=5, command= self.graphSeq).grid(row=1, column=1)
-        z3button = tk.Button(self.root, text="Najwieksza spojna skladowa", width=20, height=5, command= self.LongestConnectedGraph).grid(row=2, column=0)
+        lz2button = tk.Button(self.root, text="Ciag graficzny \ni randomizacja", width=20, height=5, command= self.graphSeq).grid(row=1, column=1)
+        z3button = tk.Button(self.root, text="Najwieksza spojna \nskladowa", width=20, height=5, command= self.LongestConnectedGraph).grid(row=2, column=0)
         z4button = tk.Button(self.root, text="Losowy graf Eulera", width=20, height=5, command= self.randomEuler).grid(row=2, column=1)
         z5button = tk.Button(self.root, text="Znajdz cykl Eulera", width=20, height=5, command= self.EulerCircut).grid(row=3, column=0)
         

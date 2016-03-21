@@ -38,11 +38,10 @@ def SeqToMatrix(Sekwencja):
 			Sekwencja[j].value -= 1 
 		Sekwencja = sorted(Sekwencja, key = lambda pair: pair.value)
 		Sekwencja.reverse()
-	WriteToFile(Matrix,'macierz.txt')
+	WriteToFile(Matrix,'files/macierz.txt')
 
 
-def WczytajSekwencje():
-	seq = eval(input("Prosze podac sekwencje liczb oddzielonych przecinkiem: "))
+def WczytajSekwencje(seq):
 	temp = ','
 	Sekwencja = []
 	for i in seq:
@@ -76,7 +75,8 @@ def CzySekwencjaJestGraficzna(Sekwencja):
 		Sekwencja[i] = Sekwencja[i] - 1 
 	CzySekwencjaJestGraficzna(Sekwencja)
 	
-
+def run():
+    print("running")
 
 
 #WczytajSekwencje()
