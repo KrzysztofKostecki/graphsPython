@@ -4,7 +4,7 @@
 			!!DONE!!
 
 --------------------------lab2---------------------------------					
--największa wspólna składowa									Ja
+-największa spójna składowa									Ja
 -sprawdzanie czy graf jest hamiltonowski(mały graf)
 								
 ---------------------------lab3---------------------------------				
@@ -24,6 +24,15 @@
 -algorytm Floyda-Warshalla									Tomek
 -losowy digraf acykliczny									
 -sortowanie topologiczne									
+
+---------------------------lab5----------------------------------
+-losowa sieć przepływowa
+-Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	
+-Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1		
+
+
+--------------------------lab ost--------------------------------
+-Komiwojażer											Ja
 
 =========================================================================================================================================
 
