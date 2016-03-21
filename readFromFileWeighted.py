@@ -28,4 +28,3 @@ if __name__ == '__main__':
     nx.draw_networkx_edge_labels(G, pos)
     plt.axis('off')
     plt.show()
-

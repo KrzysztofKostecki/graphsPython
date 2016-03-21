@@ -12,40 +12,55 @@ def Randomize(Matrix):
 	i=0
 	ListOfEdges = [] 
 	size = len(Matrix)
+	#stworzenie listy wszystkich krawedzi istniejacych w grafie 
 	for i in range(size):
 		for j in range(i,size):
 			if Matrix[i][j] == 1:
 				temp = Edge(i,j)
 				ListOfEdges.append(temp)
 	start = time.clock()
+	#ilosc krawedzi w grafie 
 	NumberOfEdges = len(ListOfEdges)
-	for i in range(100):
+	#ilosc losowan 
+	for i in range(500):
 		while True:
+			#pierwsza, losowo wybrana krawedz 
 			FirstPick = random.randint(0,NumberOfEdges-1)
+			#druga, losowo wybrana krawedz
 			SecondPick = random.randint(0,NumberOfEdges-1)
+			#zmienne pomocnicze 
 			x1 = ListOfEdges[FirstPick].v1
 			y1 = ListOfEdges[FirstPick].v2 
 			x2 = ListOfEdges[SecondPick].v1
 			y2 = ListOfEdges[SecondPick].v2 
-
+			#losowanie trwajace powyzej dwoch sekund zostaje zakonczone 
 			lap = time.clock()
 			if (lap - start > 2):
 				return Matrix
+			#sprawdzenie czy krawedzie nie sa od siebie zalezne (czy ich wierzcholki sa rozne) oraz czy po potencjalnej zamianie
+			#nie stworzylibysmy juz istniejacej krawedzi, graf przestalby byc prosty
 			if ((x1 != x2) and (x1 != y2) and (y1 != x2) and (y1!= y2) and (Matrix[x1][y2] == 0) and (Matrix[x2][y1] == 0)):
 				break 
-
+		#usuniecie podmienianych krawedzi z grafu 
 		Matrix[x1][y1] = 0
 		Matrix[y1][x1] = 0
 		Matrix[x2][y2] = 0 
 		Matrix[y2][x2] = 0
-
+		#zamiana wierzcholkow w krawedziach
 		y1, y2 = y2, y1 
-
+		#ustawienie nowych krawedzi 
 		Matrix[x1][y1] += 1
 		Matrix[y1][x1] += 1
 		Matrix[x2][y2] += 1 
 		Matrix[y2][x2] += 1
-
+		#aktualizacja listy krawedzi
+		ListOfEdges[:] = [] 
+		for i in range(size):
+			for j in range(i,size):
+				if Matrix[i][j] == 1:
+					temp = Edge(i,j)
+					ListOfEdges.append(temp)
+	#zwrocenie nowej - zrandomizowanej macierzy 
 	return Matrix 
 
 def WczytajMacierz(sciezka):
