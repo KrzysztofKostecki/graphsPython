@@ -5,7 +5,7 @@
 
 --------------------------lab2---------------------------------					
 -największa spójna składowa									Ja
--sprawdzanie czy graf jest hamiltonowski(mały graf)
+-sprawdzanie czy graf jest hamiltonowski(mały graf)						Ja
 								
 ---------------------------lab3---------------------------------				
 -sprawdzanie czy graf jest hamilotonowski							Krzysiek
