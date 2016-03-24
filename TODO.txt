@@ -26,13 +26,13 @@
 -sortowanie topologiczne									
 
 ---------------------------lab5----------------------------------
--losowa sieć przepływowa
+-losowa sieć przepływowa.                                                  Ja
 -Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	
 -Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1		
 
 
 --------------------------lab ost--------------------------------
--Komiwojażer											Ja
+-Komiwojażer											Kuba
 
 =========================================================================================================================================
 
