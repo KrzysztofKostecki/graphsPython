@@ -7,7 +7,6 @@
 			!!DONE!!
 								
 ---------------------------lab3---------------------------------				
--sprawdzanie czy graf jest hamilotonowski							Krzysiek
 -przypisywanie wag krawędziom									Krzysiek
 -algorytm Dijkstry										Krzysiek		   
 -macierz odległości między wszystkimi parami wierzchołków  					Krzysiek
