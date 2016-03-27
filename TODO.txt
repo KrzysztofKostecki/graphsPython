@@ -4,8 +4,7 @@
 			!!DONE!!
 
 --------------------------lab2---------------------------------					
--największa spójna składowa									Ja
--sprawdzanie czy graf jest hamiltonowski(mały graf)						Ja
+			!!DONE!!
 								
 ---------------------------lab3---------------------------------				
 -sprawdzanie czy graf jest hamilotonowski							Krzysiek
@@ -42,11 +41,19 @@ CO JEST ZROBIONE:
 -generowanie graów losowych
 -kodowanie grafu
 -konwersje między kodowaniami
--rysowanie grafów  
+-rysowanie grafów
 
---------------------------lab2---------------------------------	
+--------------------------lab2---------------------------------	DONE
 -generowanie grafów k-regularnych
 -randomizacja grafów prostych
--sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu 	
+-sprawdzanie sekwencji liczb czy jest ciągiem graficznym + konstruowanie takiego grafu
 -znajdowanie cyklu eulera
 -tworzenie losowego grafu eulera
+-sprawdzanie czy graf jest hamiltonowski(mały graf)
+-największa spójna składowa
+
+---------------------------lab3---------------------------------
+
+---------------------------lab4---------------------------------
+
+---------------------------lab5----------------------------------
