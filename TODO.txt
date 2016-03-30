@@ -14,14 +14,12 @@
 -minimalne drzewo rozpinające									Krzysiek
 
 ---------------------------lab4---------------------------------
--kodowanie digrafów										Tome
--zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			Tomek
--największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		
+-największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		Tomek
 -algorytm Bellmana-Forda									Tomek
 -algorytm Johnsona										Tomek
 -algorytm Floyda-Warshalla									Tomek
--losowy digraf acykliczny									
--sortowanie topologiczne									
+-losowy digraf acykliczny									Tomek
+-sortowanie topologiczne									Tomek
 
 ---------------------------lab5----------------------------------
 -losowa sieć przepływowa.									Ja
@@ -52,6 +50,8 @@ CO JEST ZROBIONE:
 -największa spójna składowa
 
 ---------------------------lab3---------------------------------
+-kodowanie digrafów										Tomek
+-zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			Tomek
 
 ---------------------------lab4---------------------------------
 
