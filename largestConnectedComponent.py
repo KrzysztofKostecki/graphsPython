@@ -48,9 +48,9 @@ def largestConnectedComponent(G):
     return tab[cur]
     
 if __name__ == '__main__':
-    G = nx.gnp_random_graph(15, 0.1)
+    G = nx.gnm_random_graph(20, 8)
     plt.figure(1)
-    pos = nx.spring_layout(G)
+    pos = nx.random_layout(G)
     nx.draw_networkx_labels(G, pos)
     nx.draw_networkx_nodes(G, pos)
     nx.draw_networkx_edges(G, pos)

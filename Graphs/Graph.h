@@ -36,9 +36,28 @@ namespace graphs {
 			Py_Initialize();
 			std::string t = "import sys\nsys.path.append('..')\nimport generating as gen\ngen.run()";
 			PyRun_SimpleString(t.c_str());
-			Py_Finalize();
-			AdjacencyList tt = Graph::getAdjListFromFile("adjList.txt");
+
+			AdjacencyList tt = Graph::getAdjListFromFile("files/adjList.txt");
 			
+			return std::auto_ptr<Graph>(new Graph(tt));
+		}
+
+		static void TransformToDiGraph(const std::auto_ptr<graphs::Graph>& tmp)
+		{
+
+			std::string t = "import sys\nsys.path.append('..')\nimport generating1 as gen\ngen.run()";
+			PyRun_SimpleString(t.c_str());
+			Py_Finalize();
+		}
+
+		static std::auto_ptr<Graph> getRandomGraph1()
+		{
+			/*Py_Initialize();
+			std::string t = "import sys\nsys.path.append('.')\nimport generating as gen\ngen.run()";
+			PyRun_SimpleString(t.c_str());
+			Py_Finalize();*/
+			AdjacencyList tt = Graph::getAdjListFromFile("files/adjList.txt");
+
 			return std::auto_ptr<Graph>(new Graph(tt));
 		}
 

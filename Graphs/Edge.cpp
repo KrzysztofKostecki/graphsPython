@@ -3,7 +3,7 @@
 namespace graphs {
 	std::ostream& operator << (std::ostream& scr, const graphs::Edge& obj)
 	{
-		scr << obj.a << "<->" << obj.b << std::endl;
+		scr << " " << obj.a << "<->" << obj.b << std::endl;
 		return scr;
 	}
 }

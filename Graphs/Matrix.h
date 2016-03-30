@@ -39,8 +39,8 @@ namespace graphs{
 			}
 		}
 
-		int getXSize() const { return _xSize; }
-		int getYSize() const { return _ySize; }
+		unsigned getXSize() const { return _xSize; }
+		unsigned getYSize() const { return _ySize; }
 
 		int** getMatrix() const { return _matrix; }
 
