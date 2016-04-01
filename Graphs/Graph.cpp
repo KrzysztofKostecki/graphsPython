@@ -36,8 +36,14 @@ namespace graphs {
 	{
 	}
 
+
 	void Graph::adjacencyListToIncidenceMatrix()
 	{
+		int * b = new int[_edges.size()];
+		for (unsigned j = 0; j < _edges.size(); j++)
+		{
+			b[j] = 0;
+		}
 		int** a = new int*[_edges.size()];
 		for (unsigned j = 0; j < _edges.size(); j++)
 		{
@@ -51,18 +57,21 @@ namespace graphs {
 		for (auto i : _edges)
 		{
 			a[j][((i->getVertexA()).getLabel())] = 1;
+			b[j] = ((i->getVertexA()).getLabel());
 			a[j][(i->getVertexB()).getLabel()] = 1;
 			j++;
 		}
 
-		_incidenceMatrix = std::auto_ptr<IncidenceMatrix>(new IncidenceMatrix((unsigned)_edges.size(), (unsigned)_verticies.size(), a));
+		_incidenceMatrix = std::auto_ptr<IncidenceMatrix>(new IncidenceMatrix((unsigned)_edges.size(), (unsigned)_verticies.size(), a, b));
 	}
+
+
 
 	void Graph::incidenceMatrixToAdjacencyMatrix()
 	{
 
 		int **a = getIncidenceMatrix().getMatrix();
-
+		int *c = getIncidenceMatrix().getTab();
 		/*int** a = new int*[getIncidenceMatrix().getXSize()];
 		for (unsigned j = 0; j < getIncidenceMatrix().getXSize(); j++)
 		{
@@ -86,7 +95,7 @@ namespace graphs {
 		}
 		int q = 0;
 		int w = 0;
-
+		int indx = 0;
 		for (unsigned j = 0; j < getIncidenceMatrix().getXSize(); j++)
 		{
 			for (unsigned k = 0; k < getIncidenceMatrix().getYSize(); k++)
@@ -102,11 +111,18 @@ namespace graphs {
 				if (a[j][k] == 1)
 					w = k;
 			}
-
-			b[q][w] = 1;
-			b[w][q] = 1;
-
+			if (c[indx] == q)
+			{
+				b[q][w] = 1;
+				indx++;
+			}
+			else if (c[indx] == w)
+			{
+				b[w][q] = 1;
+				indx++;
+			}
 		}
+
 
 
 		//MOZE SIE PRZYDAC POTEM
@@ -133,7 +149,7 @@ namespace graphs {
 
 		}*/
 
-		_adjacencyMatrix = std::auto_ptr<AdjacencyMatrix>(new AdjacencyMatrix((unsigned)_verticies.size(), (unsigned)_verticies.size(), b));
+		_adjacencyMatrix = std::auto_ptr<AdjacencyMatrix>(new AdjacencyMatrix((unsigned)_verticies.size(), (unsigned)_verticies.size(), b, c));
 	}
 
 	void Graph::adjacencyMatrixToAdjacencyList()
@@ -160,7 +176,7 @@ namespace graphs {
 			_verticies.push_back(new Vertex(i));
 		}
 
-		
+
 		for (unsigned i = 0; i < (*_adjacencyList).size(); i++)
 		{
 			for (std::list<int>::iterator j = (*_adjacencyList)[i].begin(); j != (*_adjacencyList)[i].end(); j++)
@@ -210,12 +226,12 @@ namespace graphs {
 				continue;
 			}
 
-			while (str.find(',') < str.length()-1 && str.find(',') != 0)
-			{	
-				int npos = str.find(',');
-				std::string liczba = str.substr(1, npos-1);
+			while (str.find(',') < str.length() - 1 && str.find(',') != 0)
+			{
+				int npos = (int)str.find(',');
+				std::string liczba = str.substr(1, npos - 1);
 				t[i].push_back(std::atoi(liczba.c_str()));
-				str.erase(0, npos+1);
+				str.erase(0, npos + 1);
 			}
 
 			std::string s = str.substr(1, str.find(']'));
@@ -227,6 +243,7 @@ namespace graphs {
 
 	void Graph::printAdjacencyList() const
 	{
+
 		int z = 0;
 		for (auto i : *_adjacencyList)
 		{

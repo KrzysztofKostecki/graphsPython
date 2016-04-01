@@ -6,7 +6,7 @@ namespace graphs {
 	{
 	public:
 		AdjacencyMatrix(const AdjacencyMatrix& mat);
-		AdjacencyMatrix(unsigned x, unsigned y, int** tab);
+		AdjacencyMatrix(unsigned x, unsigned y, int** tab, int *tab1);
 		~AdjacencyMatrix();
 	};
 

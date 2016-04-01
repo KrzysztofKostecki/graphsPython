@@ -1,7 +1,7 @@
 #include "AdjacencyMatrix.h"
 
 namespace graphs {
-	AdjacencyMatrix::AdjacencyMatrix(const AdjacencyMatrix& mat) : Matrix(mat._xSize, mat._ySize)
+	AdjacencyMatrix::AdjacencyMatrix(const AdjacencyMatrix& mat) : Matrix(mat._xSize, mat._ySize, mat._tab)
 	{
 		for (unsigned i = 0; i < mat._xSize; i++)
 		{
@@ -12,7 +12,7 @@ namespace graphs {
 		}
 	}
 
-	AdjacencyMatrix::AdjacencyMatrix(unsigned x, unsigned y, int** tab) : Matrix(x, y)
+	AdjacencyMatrix::AdjacencyMatrix(unsigned x, unsigned y, int** tab, int *tab1) : Matrix(x, y, tab1)
 	{
 		for (unsigned i = 0; i < x; i++)
 		{

@@ -1,10 +1,11 @@
 #include "IncidenceMatrix.h"
 
 namespace graphs {
-	IncidenceMatrix::IncidenceMatrix(unsigned x, unsigned y, int** tab) : Matrix(x, y)
+	IncidenceMatrix::IncidenceMatrix(unsigned x, unsigned y, int** tab, int *tab1) : Matrix(x, y, tab1)
 	{
 		for (unsigned i = 0; i < x; i++)
 		{
+			_tab[i] = tab1[i];
 			for (unsigned j = 0; j < y; j++)
 			{
 				_matrix[i][j] = tab[i][j];
@@ -12,7 +13,7 @@ namespace graphs {
 		}
 	}
 
-	IncidenceMatrix::IncidenceMatrix(const IncidenceMatrix& mat) : Matrix(mat._xSize, mat._ySize)
+	IncidenceMatrix::IncidenceMatrix(const IncidenceMatrix& mat) : Matrix(mat._xSize, mat._ySize, mat._tab)
 	{
 		for (unsigned i = 0; i < mat._xSize; i++)
 		{
