@@ -24,11 +24,12 @@
 ---------------------------lab5----------------------------------
 -losowa sieć przepływowa.									Ja
 -Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	
--Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1		
+-Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1		Ja
 
 
 --------------------------lab ost--------------------------------
 -Komiwojażer											Kuba
+-Algorytm Hoshena-Kopelmana dla perkolacji węzłowej						Tomek
 
 =========================================================================================================================================
 

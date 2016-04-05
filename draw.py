@@ -9,6 +9,7 @@ def draw(weighted=False):
         G = readFromFileW()
     else:
         G = readFromFile()
+        
     pos = nx.circular_layout(G)
     nx.draw_networkx_nodes(G, pos)
     nx.draw_networkx_edges(G, pos)
@@ -17,7 +18,7 @@ def draw(weighted=False):
         nx.draw_networkx_edge_labels(G, pos)
     plt.axis('off')
     plt.show()
-    
+
 if __name__ == '__main__':
     draw(True)
     draw(False)

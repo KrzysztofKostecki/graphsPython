@@ -31,14 +31,12 @@ def seq():
     
 def p():
     pass
-    
+
+def run():
+    w = MainW()
+    w.loop()
+
+
 if __name__ == '__main__':
     w = MainW()
     w.loop()
-    '''print('Wybierz 1 aby wprowadzic sprawdzic czy sekwencja jest graficzna')
-    print('Wybierz 2 aby zrandomizowac graf ')
-    choise = input()
-    if choise == '1':
-        cg.WczytajSekwencje()
-    if choise == '2':
-        rd.Wczytaj()'''

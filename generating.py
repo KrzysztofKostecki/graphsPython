@@ -74,7 +74,7 @@ def randomGraphEdges(n, m, directed=False):
             continue
         else:
             G.add_edge(u,v)
-            edge_count=edge_count+1
+            edge_count += 1
     return G
     
 def randomGraphProp(n, p, directed=False):
@@ -99,16 +99,16 @@ def randomGraphProp(n, p, directed=False):
     return G
        
 
-	
+
 def write(H):
     with open('files/adjList.txt', 'w') as f:
         for i in H.adjacency_list():
             f.write(str(i) + "\n")
-			
+
 def run():
     w = GenWindow()
     w.loop()
-	
+
 if __name__ == "__main__":
     w = GenWindow()
     w.loop()

@@ -17,7 +17,7 @@ def randomRegularGraph(d, n):
         return nx.complete_graph(n)
 
     if d == 0:
-        return empty_graph(n)
+        return tk.empty_graph(n)
 		
     nodes = [0]*n
     '''losuje d wierzcholkow z ktorymi sie laczy w liscie nodes mamy ilosc sasiadow danego wierzcholka'''

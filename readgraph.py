@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 def readFromFile():
     with open("files/adjList.txt", 'r') as f:
         tab = f.readlines()
-		
+
     adjlist = []
     x = 0
     for i in tab:

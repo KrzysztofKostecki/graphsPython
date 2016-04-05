@@ -25,11 +25,11 @@ class mainWindow(Window):
 		
 
 def run():
-	window = mainWindow()
-	window.make()
-	window.loop()
+    window = mainWindow()
+    window.make()
+    window.loop()
 	
 if __name__ == "__main__":
-	window = mainWindow()
-	window.make()
-	window.loop()
+    window = mainWindow()
+    window.make()
+    window.loop()

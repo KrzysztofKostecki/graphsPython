@@ -75,7 +75,14 @@ def EulerCircuit(G):
             exit()
     else:       # Found the Eulerian Tour in the very first call. Lucky Enough!
         return tour
-    
+
+def run():
+    G = nx.gnm_random_graph(6,12)
+    print(G.edges())
+    t = EulerCircuit(G)
+    if (t != None):
+        print (t)
+
 if __name__ == '__main__':
     G = nx.gnm_random_graph(6,12)
     print(G.edges())
