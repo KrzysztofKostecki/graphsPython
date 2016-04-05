@@ -22,7 +22,6 @@
 -sortowanie topologiczne									Tomek
 
 ---------------------------lab5----------------------------------
--losowa sieć przepływowa.									Ja
 -Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	
 -Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1		Ja
 
@@ -51,9 +50,12 @@ CO JEST ZROBIONE:
 -największa spójna składowa
 
 ---------------------------lab3---------------------------------
--kodowanie digrafów										Tomek
--zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki			Tomek
+-kodowanie digrafów
+-zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki
 
 ---------------------------lab4---------------------------------
 
 ---------------------------lab5----------------------------------
+-losowa sieć przepływowa.
+
+--------------------------lab ost--------------------------------
