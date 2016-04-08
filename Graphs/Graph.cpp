@@ -61,95 +61,35 @@ namespace graphs {
 			a[j][(i->getVertexB()).getLabel()] = 1;
 			j++;
 		}
-
-		_incidenceMatrix = std::auto_ptr<IncidenceMatrix>(new IncidenceMatrix((unsigned)_edges.size(), (unsigned)_verticies.size(), a, b));
+		_incidenceMatrix = std::auto_ptr<IncidenceMatrix>(new IncidenceMatrix((unsigned)_edges.size(), (unsigned)_verticies.size(), a));
 	}
 
 
 
 	void Graph::incidenceMatrixToAdjacencyMatrix()
 	{
+		unsigned size = (*_adjacencyList).size();
+		int** tab = new int*[size];
+		for (unsigned i = 0; i < size; i++) {
+			tab[i] = new int[size];
 
-		int **a = getIncidenceMatrix().getMatrix();
-		int *c = getIncidenceMatrix().getTab();
-		/*int** a = new int*[getIncidenceMatrix().getXSize()];
-		for (unsigned j = 0; j < getIncidenceMatrix().getXSize(); j++)
-		{
-		a[j] = new int[getIncidenceMatrix().getYSize()];
-		for (unsigned k = 0; k < getIncidenceMatrix().getYSize(); k++)
-		{
-		a[j][k] = getIncidenceMatrix().getMatrix()[j][k];
-		}
-		}
-		*/
-
-
-		int** b = new int*[_verticies.size()];
-		for (unsigned j = 0; j < _verticies.size(); j++)
-		{
-			b[j] = new int[_verticies.size()];
-			for (unsigned k = 0; k < _verticies.size(); k++)
-			{
-				b[j][k] = 0;
+			for (unsigned j = 0; j < size; j++) {
+				tab[i][j] = 0;
 			}
+			
 		}
-		int q = 0;
-		int w = 0;
-		int indx = 0;
-		for (unsigned j = 0; j < getIncidenceMatrix().getXSize(); j++)
-		{
-			for (unsigned k = 0; k < getIncidenceMatrix().getYSize(); k++)
-			{
-				if (a[j][k] == 1)
-				{
-					q = k;
-					break;
+		for (unsigned i = 0; i < size; i++) {
+			for (auto j = ((*_adjacencyList)[i]).begin(); j != ((*_adjacencyList)[i]).end(); j++) {
+				try {
+					tab[i][*j] = 1;
+				}
+				catch (...) {
+					std::cout << "exc" << std::endl;
 				}
 			}
-			for (unsigned k = 0; k < getIncidenceMatrix().getYSize(); k++)
-			{
-				if (a[j][k] == 1)
-					w = k;
-			}
-			if (c[indx] == q)
-			{
-				b[q][w] = 1;
-				indx++;
-			}
-			else if (c[indx] == w)
-			{
-				b[w][q] = 1;
-				indx++;
-			}
 		}
-
-
-
-		//MOZE SIE PRZYDAC POTEM
-		/* int k =0;
-		for (unsigned i = 0; i < getIncidenceMatrix().getXSize(); i++)
-		{
-		for (unsigned j = 0; j < getIncidenceMatrix().getYSize(); j++)
-		{
-		if (getIncidenceMatrix().getMatrix()[i][j]==1)
-		a[j][i]=1;
-		}
-		k++;
-		}*/
-
-
-
-
-		/* for (unsigned i = 0; i < (*_adjacencyList).size(); i++)
-		{
-		for (std::list<int>::iterator j = (*_adjacencyList)[i].begin(); j != (*_adjacencyList)[i].end(); j++)
-		{
-		a[i][*j]=1;
-		}
-
-		}*/
-
-		_adjacencyMatrix = std::auto_ptr<AdjacencyMatrix>(new AdjacencyMatrix((unsigned)_verticies.size(), (unsigned)_verticies.size(), b, c));
+		
+		_adjacencyMatrix = std::auto_ptr<AdjacencyMatrix>(new AdjacencyMatrix((unsigned)_verticies.size(), (unsigned)_verticies.size(), tab));
 	}
 
 	void Graph::adjacencyMatrixToAdjacencyList()

@@ -5,15 +5,13 @@ namespace graphs{
 
 	class Matrix {
 	public:
-		Matrix(int x, int y, int *tab1) {
+		Matrix(int x, int y) {
 			_xSize = x;
 			_ySize = y;
 			_matrix = new int*[x];
-			_tab = new int[x];
 			for (int i = 0; i < x; i++)
 			{
 				_matrix[i] = new int[y];
-				_tab[i] = 0;
 				for (int j = 0; j < y; j++)
 				{
 					_matrix[i][j] = 0;
@@ -50,12 +48,10 @@ namespace graphs{
 		int** getMatrix() const { return _matrix; }
 		unsigned getXSize() const { return _xSize; }
 		unsigned getYSize() const { return _ySize; }
-		int* getTab() const { return _tab; }
 
 	protected:
 		unsigned _xSize;
 		unsigned _ySize;
-		int *_tab;
 		int** _matrix;
 	};
 

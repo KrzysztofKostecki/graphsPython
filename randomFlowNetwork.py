@@ -30,8 +30,8 @@ def randomFlowNetwork(numLayers=4, maxFlow=10):
         next = sum(layers[:i+2])
         for j in range(first, last):
             for k in range(last, next):
-                ss = random.randint(0,1)
-                if ss == 1:
+                ss = random.randint(0,100)
+                if ss <= 5:
                     G.add_edge(j+1,k+1, weight = random.randint(1,10))
                     
     for i in range(1, layers[0] + 1):
@@ -55,13 +55,25 @@ def randomFlowNetwork(numLayers=4, maxFlow=10):
     num = len(G.nodes())
     for i in range(layers[0],num-1):
         p=False
-        for j in range(0, i):
+        for j in range(1, i):
             if G.has_edge(i,j):
                 p = True
                 break
         if p == False:
-            G.add_edge(random.randint(1,i), i, weight=random.randint(1,10))
+            pos = random.randint(1,i)
+            print(pos, i)
+            G.add_edge(pos, i, weight=random.randint(1,10))
         
+    for i in range(layers[0],num-2):
+        p=False
+        for j in range(i, num-2):
+            if G.has_edge(i,j):
+                p = True
+                break
+        if p == False:
+            pos = random.randint(i,num-1)
+            print(pos, i)
+            G.add_edge(pos, i, weight=random.randint(1,10))
             
             
     return G

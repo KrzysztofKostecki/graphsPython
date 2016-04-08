@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
     ptr->printAdjacencyMatrix();
     std::cout<<std::endl;
     
-    graphs::Graph::TransformToDiGraph(ptr);
+    /*graphs::Graph::TransformToDiGraph(ptr);
     
     std::cout<<std::endl<<"PO PRZEMIANIE"<<std::endl<<std::endl;
     
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
     ptr1->printIncidenceMatrix();
     std::cout<<std::endl;
     ptr1->printAdjacencyMatrix();
-    std::cout<<std::endl;
+    std::cout<<std::endl;*/
     
 	std::cin.get();
     return 0;
