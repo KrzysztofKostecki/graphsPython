@@ -1,5 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+from generating import *
 
 def bfs(G, source):
     """przeszukiwanie wszerz"""
@@ -48,21 +49,23 @@ def largestConnectedComponent(G):
     return tab[cur]
 
 def run():
-    G = nx.gnm_random_graph(25, 30)
+    G = randomGraphProp(15, 0.1)
     plt.figure(1)
     pos = nx.random_layout(G)
     nx.draw_networkx_labels(G, pos)
     nx.draw_networkx_nodes(G, pos)
     nx.draw_networkx_edges(G, pos)
     t = largestConnectedComponent(G)
+    plt.axis('off')
     plt.figure(2)
     nx.draw_networkx_labels(t, pos)
     nx.draw_networkx_nodes(t, pos)
     nx.draw_networkx_edges(t, pos)
+    plt.axis('off')
     plt.show()
 
 if __name__ == '__main__':
-    G = nx.gnm_random_graph(20, 8)
+    G = randomGraphEdges(20, 8)
     plt.figure(1)
     pos = nx.random_layout(G)
     nx.draw_networkx_labels(G, pos)

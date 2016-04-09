@@ -1,4 +1,5 @@
 import networkx as nx
+from generating import *
 
 def isEulerian(G):
     for v,d in G.degree_iter():
@@ -61,31 +62,44 @@ def EulerCircuit(G):
         try:
             while True:
                 if node in list(zip(*graph))[0] or node in list(zip(*graph))[1]:
-                    t = getTour(graph)    # Retreivng the additional tour
+                    t = getTour(graph)
                     j = t.index(node)
                     tour = tour[ : i] + t[j:-1] + t[ :j+1] + tour[i+1: ]        # Joining the two tours.
                     if not graph:       # Found Eulerian Tour
                         return tour     # Returning the Eulerian Tour
-                    loop = enumerate(tour[: -1])        # Still stuck? Looping back to search for another tour.
+                    loop = enumerate(tour[: -1])   
                 l = loop.__next__()
                 i = l[0]
                 node = l[1]
-        except StopIteration:   # Oops! seems like the vertices in the current tour cannot connect to rest of the edges in the graph.
+        except StopIteration: 
             print("Graf nie jest polaczony")
             exit()
-    else:       # Found the Eulerian Tour in the very first call. Lucky Enough!
+    else:     
         return tour
 
 def run():
-    G = nx.gnm_random_graph(6,12)
+    plt.clf()
+    G = randomGraphEdges(6,12)
+    pos = nx.circular_layout(G)
+    nx.draw_networkx_nodes(G, pos)
+    nx.draw_networkx_edges(G, pos)
+    nx.draw_networkx_labels(G, pos)
     print(G.edges())
     t = EulerCircuit(G)
     if (t != None):
         print (t)
+    plt.axis('off')
+    plt.show()
 
 if __name__ == '__main__':
-    G = nx.gnm_random_graph(6,12)
+    G = randomGraphEdges(6,12)
+    pos = nx.circular_layout(G)
+    nx.draw_networkx_nodes(G, pos)
+    nx.draw_networkx_edges(G, pos)
+    nx.draw_networkx_labels(G, pos)
     print(G.edges())
     t = EulerCircuit(G)
     if (t != None):
         print (t)
+    plt.axis('off')
+    plt.show()

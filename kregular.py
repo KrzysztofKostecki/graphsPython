@@ -62,6 +62,7 @@ def run():
     master.mainloop()
     
 def doMagic(d, n):
+    plt.clf()
     G = randomRegularGraph(int(d), int(n))
     pos = nx.circular_layout(G)
     nx.draw_networkx_nodes(G, pos)

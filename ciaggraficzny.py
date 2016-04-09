@@ -73,6 +73,9 @@ def CzySekwencjaJestGraficzna(Sekwencja):
         return
     HowMany = Sekwencja[0]
     Sekwencja.remove(Sekwencja[0])
+    if HowMany >= len(Sekwencja):
+        print('Podana sekwencja nie jest graficzna\n')
+        return
     for i in range(HowMany):
         Sekwencja[i] = Sekwencja[i] - 1
     CzySekwencjaJestGraficzna(Sekwencja)
