@@ -1,5 +1,6 @@
 import networkx as nx
 from generating import *
+from drawK import *
 
 def isEulerian(G):
     for v,d in G.degree_iter():
@@ -79,12 +80,13 @@ def EulerCircuit(G):
 
 def run():
     plt.clf()
-    G = randomGraphEdges(6,12)
+    G = get('files/euler.txt')
+    #G = randomGraphEdges(6,12)
     pos = nx.circular_layout(G)
     nx.draw_networkx_nodes(G, pos)
     nx.draw_networkx_edges(G, pos)
     nx.draw_networkx_labels(G, pos)
-    print(G.edges())
+    #print(G.edges())
     t = EulerCircuit(G)
     if (t != None):
         print (t)
@@ -92,12 +94,13 @@ def run():
     plt.show()
 
 if __name__ == '__main__':
-    G = randomGraphEdges(6,12)
+    G = get('files/euler.txt')
+    #G = randomGraphEdges(6,12)
     pos = nx.circular_layout(G)
     nx.draw_networkx_nodes(G, pos)
     nx.draw_networkx_edges(G, pos)
     nx.draw_networkx_labels(G, pos)
-    print(G.edges())
+    #print(G.edges())
     t = EulerCircuit(G)
     if (t != None):
         print (t)

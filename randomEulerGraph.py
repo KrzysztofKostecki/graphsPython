@@ -1,6 +1,11 @@
 import numpy as np
 import random
 import time
+import tkinter as tk
+import matplotlib.pyplot as plt
+import networkx as nx
+from drawK import *
+
 #zapis do pliku
 #przyjmuje macierz sasiedztwa i nazwe pliku do stworzenia 
 def WriteToFile(Matrix,path):
@@ -25,8 +30,7 @@ def IfEulerian(Matrix):
 		return False
 	return True 
 
-def run():
-    NumberOfNodes = int(input('Podaj ilosc wierzcholkow: '))
+def run(NumberOfNodes):
     Matrix = np.zeros((NumberOfNodes,NumberOfNodes),dtype=np.int)
 
     #sprawdzenie czy wylosowany graf jest eulerowski 
@@ -48,6 +52,17 @@ def run():
     print (Matrix)
 
     WriteToFile(Matrix,'files/euler.txt')
+    draw('files/euler.txt')
+    
+def main():
+    master = tk.Tk()
+    master.wm_title("Generowanie losowego grafu Eulera")
+    l1 = tk.Label(master, text="Podaj ilosc wierzcholkow").grid(row = 0, column = 0)
+    e1 = tk.Entry(master)
+    e1.grid(row = 0, column = 1)
+    button = tk.Button(master, text="generuj", width=20, command= lambda: run(int(e1.get())))
+    button.grid(row=1, column=1)
+    master.mainloop()
 
 if __name__ == '__main__':
-    run()
+    main()

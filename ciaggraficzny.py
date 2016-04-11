@@ -1,3 +1,5 @@
+from drawK import *
+
 class Counter:
     CzyJest = 0
 
@@ -59,7 +61,7 @@ def WczytajSekwencje(seq):
     CzySekwencjaJestGraficzna(Sekwencja)
     if Counter.CzyJest == 1:
         SeqToMatrix(SeqCopy)
-
+    draw('files/macierz.txt')
 
 def CzySekwencjaJestGraficzna(Sekwencja):
     Sekwencja.sort(reverse=True)
@@ -79,9 +81,5 @@ def CzySekwencjaJestGraficzna(Sekwencja):
     for i in range(HowMany):
         Sekwencja[i] = Sekwencja[i] - 1
     CzySekwencjaJestGraficzna(Sekwencja)
-
-
-def run():
-    print("running")
 
 # WczytajSekwencje()

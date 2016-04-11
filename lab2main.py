@@ -17,7 +17,7 @@ class Lab2Window(Window):
         kreg.run()
 
     def randomEuler(self):
-        reuler.run()
+        reuler.main()
         
     def EulerCircut(self):
         ec.run()

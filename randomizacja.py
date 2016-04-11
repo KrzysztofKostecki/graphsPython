@@ -1,6 +1,7 @@
 import random 
 import time 
 import ciaggraficzny as cg 
+from drawK import *
 
 class Edge:
 	def __init__(self,v1,v2):
@@ -98,7 +99,7 @@ def Wczytaj():
 
 
 	while True:
-		ask  = str(input('Przeprowadzic randomizacje? [Y/N]'))
+		ask  = 'y'
 		if ask.lower() == 'y':
 			print('Po randomizacji:')
 			NewMatrix = Randomize(Matrix)
@@ -116,13 +117,14 @@ def Wczytaj():
 			
 
 	while True:
-		ask  = str(input('Zapisac do nowego pliku? [Y/N]'))
+		ask  = 'y'
 		if ask.lower() == 'y':
-			cg.WriteToFile(NewMatrix,'randmacierz.txt')
+			cg.WriteToFile(NewMatrix,'files/randmacierz.txt')
 			break
 		if ask.lower() == 'n':
 			print('Brak zapisu')
 			break
-
+	draw('files/randmacierz.txt')
+    
 def run():
     print("running")
