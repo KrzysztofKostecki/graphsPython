@@ -134,6 +134,32 @@ namespace graphs {
 		}
 	}
 
+	void Graph::write()
+	{
+		std::ofstream ostr("files/adjList.txt");
+		for (auto i : *_adjacencyList)
+		{
+			ostr << "[";
+			unsigned j = 0;
+			for (auto k = i.begin(); j != i.size() - 1; k++, j++)
+			{
+				ostr << *k << ", ";
+			}
+			ostr << i.back();
+			ostr << "]\n";
+		}
+	}
+
+	void Graph::draw()
+	{
+		write();
+		Py_Initialize();
+		std::string t = "import sys\nsys.path.append('..')\nimport draw as d\nd.draw()";
+		PyRun_SimpleString(t.c_str());
+		Py_Finalize();
+
+	}
+
 
 	AdjacencyList Graph::getAdjListFromFile(std::string file)
 	{

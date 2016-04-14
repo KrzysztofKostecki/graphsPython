@@ -12,7 +12,8 @@
 int main(int argc, char* argv[])
 {
 	//std::auto_ptr<graphs::Graph> ptr = graphs::Graph::getRandomGraph();
-
+	//graphs::AdjacencyList inc = graphs::Graph::getAdjListFromFile();
+	//graphs::IncidenceMatrix inc = graphs::Graph::getIncidenceMatrixFromFile();
 	graphs::AdjacencyMatrix inc = graphs::Graph::getAdjacencyMatrixFromFile();
 	graphs::Graph g (inc);
 	
@@ -23,6 +24,7 @@ int main(int argc, char* argv[])
 	std::cout<<std::endl;
 	g.printAdjacencyMatrix();
 	std::cout<<std::endl;
+	g.draw();
 	
 	/*graphs::Graph::TransformToDiGraph(ptr);
 	

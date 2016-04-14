@@ -31,6 +31,9 @@ namespace graphs {
 		//drawing the graph
 		void draw();
 
+		//write to adjList.txt
+		void write();
+
 		//random graph generator
 		static std::auto_ptr<Graph> getRandomGraph()
 		{
@@ -108,6 +111,8 @@ namespace graphs {
 			}
 			return IncidenceMatrix(x, y, tab);
 		}
+
+		static AdjacencyList Graph::getAdjListFromFile(std::string file = "files/adjList.txt");
 		
 		static AdjacencyMatrix getAdjacencyMatrixFromFile(){
 
@@ -161,7 +166,7 @@ namespace graphs {
 		void adjacencyMatrixToAdjacencyList();
 		void incidenceMatrixToAdjacencyMatrix();
 		void parseList();
-		static AdjacencyList Graph::getAdjListFromFile(std::string file);
+		
 
 		std::vector<Vertex*> _verticies;
 		std::vector<Edge*> _edges;
