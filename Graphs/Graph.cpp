@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <vector>
 
 
 namespace graphs {
@@ -68,39 +69,43 @@ namespace graphs {
 
 	void Graph::incidenceMatrixToAdjacencyMatrix()
 	{
-		unsigned size = (*_adjacencyList).size();
-		int** tab = new int*[size];
-		for (unsigned i = 0; i < size; i++) {
-			tab[i] = new int[size];
-
-			for (unsigned j = 0; j < size; j++) {
+		int** tab = new int*[(*_incidenceMatrix).getYSize()];
+		for (unsigned i = 0; i < (*_incidenceMatrix).getYSize(); i++) {
+			tab[i] = new int[(*_incidenceMatrix).getYSize()];
+			for (unsigned j = 0; j < (*_incidenceMatrix).getYSize(); j++) {
 				tab[i][j] = 0;
 			}
-			
 		}
-		for (unsigned i = 0; i < size; i++) {
-			for (auto j = ((*_adjacencyList)[i]).begin(); j != ((*_adjacencyList)[i]).end(); j++) {
-				try {
-					tab[i][*j] = 1;
-				}
-				catch (...) {
-					std::cout << "exc" << std::endl;
+		std::cout << std::endl;
+		std::vector<int> vec;
+		for (unsigned i = 0; i < (*_incidenceMatrix).getXSize(); i++) {
+			for (unsigned j = 0; j < (*_incidenceMatrix).getYSize(); j++) {
+				if ((*_incidenceMatrix).getMatrix()[i][j] == 1) {
+					vec.push_back(j);
 				}
 			}
+			for (auto k = vec.begin(); k < vec.end(); k++) {
+				for (auto z = k + 1; z < vec.end(); z++) {
+					tab[*k][*z] = 1;
+					tab[*z][*k] = 1;
+				}
+			}
+			vec.clear();
 		}
+
+		_adjacencyMatrix = std::auto_ptr<AdjacencyMatrix>(new AdjacencyMatrix((unsigned)(*_incidenceMatrix).getYSize(), (unsigned)(*_incidenceMatrix).getYSize(), tab));
 		
-		_adjacencyMatrix = std::auto_ptr<AdjacencyMatrix>(new AdjacencyMatrix((unsigned)_verticies.size(), (unsigned)_verticies.size(), tab));
 	}
 
 	void Graph::adjacencyMatrixToAdjacencyList()
 	{
 		AdjacencyList tmp;
 
-		for (unsigned j = 0; j < _verticies.size(); j++)
+		for (unsigned j = 0; j < (*_adjacencyMatrix).getXSize(); j++)
 		{
 			std::list<int> a;
 			tmp.push_back(a);
-			for (unsigned k = 0; k < _verticies.size(); k++)
+			for (unsigned k = 0; k < (*_adjacencyMatrix).getXSize(); k++)
 			{
 				if (getAdjacencyMatrix().getMatrix()[j][k] == 1)
 					tmp[j].push_back(k);

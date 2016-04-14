@@ -5,16 +5,18 @@ namespace graphs {
 	{
 		for (unsigned i = 0; i < x; i++)
 		{
-			//_tab[i] = tab1[i];
 			for (unsigned j = 0; j < y; j++)
 			{
 				_matrix[i][j] = tab[i][j];
 			}
+			delete[] tab[i];
 		}
+		delete[] tab;
 	}
 
 	IncidenceMatrix::IncidenceMatrix(const IncidenceMatrix& mat) : Matrix(mat._xSize, mat._ySize)
 	{
+
 		for (unsigned i = 0; i < mat._xSize; i++)
 		{
 			for (unsigned y = 0; y < mat._ySize; y++)
@@ -28,4 +30,5 @@ namespace graphs {
 	IncidenceMatrix::~IncidenceMatrix()
 	{
 	}
+
 }

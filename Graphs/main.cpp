@@ -11,30 +11,33 @@
 
 int main(int argc, char* argv[])
 {
-    std::auto_ptr<graphs::Graph> ptr = graphs::Graph::getRandomGraph();
-    
-    ptr->printAdjacencyList();
-    std::cout<<std::endl;
-    
-    ptr->printIncidenceMatrix();
-    std::cout<<std::endl;
-    ptr->printAdjacencyMatrix();
-    std::cout<<std::endl;
-    
-    /*graphs::Graph::TransformToDiGraph(ptr);
-    
-    std::cout<<std::endl<<"PO PRZEMIANIE"<<std::endl<<std::endl;
-    
-    std::auto_ptr<graphs::Graph> ptr1 = graphs::Graph::getRandomGraph1();
-    
-    
-    ptr1->printAdjacencyList();
+	//std::auto_ptr<graphs::Graph> ptr = graphs::Graph::getRandomGraph();
+
+	graphs::AdjacencyMatrix inc = graphs::Graph::getAdjacencyMatrixFromFile();
+	graphs::Graph g (inc);
+	
+	g.printAdjacencyList();
+	std::cout<<std::endl;
+
+	g.printIncidenceMatrix();
+	std::cout<<std::endl;
+	g.printAdjacencyMatrix();
+	std::cout<<std::endl;
+	
+	/*graphs::Graph::TransformToDiGraph(ptr);
+	
+	std::cout<<std::endl<<"PO PRZEMIANIE"<<std::endl<<std::endl;
+	
+	std::auto_ptr<graphs::Graph> ptr1 = graphs::Graph::getRandomGraph1();
+	
+	
+	ptr1->printAdjacencyList();
 	std::cout << std::endl;
-    ptr1->printIncidenceMatrix();
-    std::cout<<std::endl;
-    ptr1->printAdjacencyMatrix();
-    std::cout<<std::endl;*/
-    
+	ptr1->printIncidenceMatrix();
+	std::cout<<std::endl;
+	ptr1->printAdjacencyMatrix();
+	std::cout<<std::endl;*/
+	
 	std::cin.get();
-    return 0;
+	return 0;
 }

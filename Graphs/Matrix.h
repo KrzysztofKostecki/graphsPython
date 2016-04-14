@@ -29,6 +29,7 @@ namespace graphs{
 		}
 
 		virtual void print(){
+
 			for (unsigned i = 0; i < _xSize; i++) {
 				for (unsigned j = 0; j < _ySize; j++) {
 					if (j == 0 && i <= 9)

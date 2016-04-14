@@ -1,6 +1,7 @@
 import networkx as nx
 from generating import *
 from drawK import *
+import numpy as np
 
 def isEulerian(G):
     for v,d in G.degree_iter():
@@ -9,7 +10,7 @@ def isEulerian(G):
     if not nx.is_connected(G):
         return False
     return True
-
+"""
 def getTour(graph):
     '''This function returns a possible tour in the current graph and removes the edges included in that tour, from the graph.'''
 
@@ -21,6 +22,7 @@ def getTour(graph):
 
     tour =[]        # Finding a tour in the current graph.
     loop = enumerate(nodes_degree)
+
     while True:
         try:
             l = loop.__next__()
@@ -77,6 +79,36 @@ def EulerCircuit(G):
             exit()
     else:     
         return tour
+"""
+
+def EulerCircuit(G):
+    if not isEulerian(G):
+        print("Graf nie jest Eulerowski")
+        return None
+        
+    adjList = {}
+    li = G.adjacency_list()
+    nod = G.nodes()
+    
+    for i in range(len(nod)):
+        adjList[nod[i]] = li[i]
+    mat = np.zeros((len(li), len(li)), int)
+    
+    for k in adjList:
+        for v in adjList[k]:
+            mat[int(k)][int(v)]= 1
+    stack = []
+    
+    def _DFSEuler(v):
+        for i in range(len(mat)):
+            while mat[v][i] != 0:
+                mat[v][i] -= 1
+                mat[i][v] -= 1
+                _DFSEuler(i)
+        stack.append(v)
+            
+    _DFSEuler(0)        
+    return stack
 
 def run():
     plt.clf()
@@ -94,8 +126,8 @@ def run():
     plt.show()
 
 if __name__ == '__main__':
-    G = get('files/euler.txt')
-    #G = randomGraphEdges(6,12)
+    #G = get('files/euler.txt')
+    G = randomGraphEdges(6,12)
     pos = nx.circular_layout(G)
     nx.draw_networkx_nodes(G, pos)
     nx.draw_networkx_edges(G, pos)

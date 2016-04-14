@@ -9,6 +9,7 @@
 #include "IncidenceMatrix.h"
 #include <Python.h>
 #include <string>
+#include <fstream>
 
 
 namespace graphs {
@@ -66,6 +67,90 @@ namespace graphs {
 		const AdjacencyMatrix& getAdjacencyMatrix() const{ return *_adjacencyMatrix; }
 		const IncidenceMatrix& getIncidenceMatrix() const{ return *_incidenceMatrix; }
 		
+		static IncidenceMatrix getIncidenceMatrixFromFile(){
+			
+			std::ifstream istr("files/incMat.txt");
+			if (istr.fail()){
+				std::cout << "Nie udalo sie otworzyc pliku" << std::endl;
+				std::exit(-1);
+			}
+
+			std::string str;
+			std::vector <std::string> strvec;
+			while (std::getline(istr, str))
+			{
+				strvec.push_back(str);
+			}
+			int x = strvec.size();
+			int y = strvec[0].length() / 2 + 1;
+
+			int ** tab = new int*[x];
+			for (int i = 0; i < x; i++) {
+				tab[i] = new int[y];
+				for (int j = 0; j < y; j++) {
+					tab[i][j] = 0;
+				}
+
+			}
+			int xx = 0;
+			int yy = 0;
+			for (auto i : strvec) {
+				for (auto j : i) {
+					if (j == '0') {
+						tab[xx][yy++] = 0;
+					}
+					if (j == '1') {
+						tab[xx][yy++] = 1;
+					}
+				}
+				xx++;
+				yy = 0;
+			}
+			return IncidenceMatrix(x, y, tab);
+		}
+		
+		static AdjacencyMatrix getAdjacencyMatrixFromFile(){
+
+			std::ifstream istr("files/adjMat.txt");
+			if (istr.fail()){
+				std::cout << "Nie udalo sie otworzyc pliku" << std::endl;
+				std::exit(-1);
+			}
+
+			std::string str;
+			std::vector <std::string> strvec;
+			while (std::getline(istr, str))
+			{
+				strvec.push_back(str);
+			}
+			int x = strvec.size();
+			int y = x;
+
+			int ** tab = new int*[x];
+			for (int i = 0; i < x; i++) {
+				tab[i] = new int[y];
+				for (int j = 0; j < y; j++) {
+					tab[i][j] = 0;
+				}
+
+			}
+			int xx = 0;
+			int yy = 0;
+			for (auto i : strvec) {
+				for (auto j : i) {
+					if (j == '0') {
+						tab[xx][yy++] = 0;
+					}
+					if (j == '1') {
+						tab[xx][yy++] = 1;
+					}
+				}
+				xx++;
+				yy = 0;
+			}
+			return AdjacencyMatrix(x, y, tab);
+		}
+
 		//printers
 		void printAdjacencyList() const;
 		void printAdjacencyMatrix() const;
