@@ -2,84 +2,34 @@ import networkx as nx
 from generating import *
 from drawK import *
 import numpy as np
+from Window import *
 
+edges = []
+G = None
+t = None
+counter = 0
+
+class updateWindow(Window):
+    def __init__(self):
+        super(updateWindow, self).__init__()
+        self.root.wm_title="nastepny krok"
+        b1 = tk.Button(self.root, text="Nastepny krok", width=20, height=5, command= update).grid(row=1, column=0)
+        
+    def loop(self):
+        global counter
+        counter = 0
+        self.root.mainloop()
+        
+def update():
+    pass
+        
 def isEulerian(G):
     for v,d in G.degree_iter():
         if d % 2 != 0:
             return False
-    if not nx.is_connected(G):
-        return False
+    '''if not nx.is_connected(G):
+        return False'''
     return True
-"""
-def getTour(graph):
-    '''This function returns a possible tour in the current graph and removes the edges included in that tour, from the graph.'''
-
-    nodes_degree = {}       # Creating a {node: degree} dictionary for current graph.
-    for edge in graph:
-        a, b = edge[0], edge[1]
-        nodes_degree[a] = nodes_degree.get(a, 0) + 1
-        nodes_degree[b] = nodes_degree.get(b, 0) + 1
-
-    tour =[]        # Finding a tour in the current graph.
-    loop = enumerate(nodes_degree)
-
-    while True:
-        try:
-            l = loop.__next__()
-            index = l[0]
-            node = l[1]
-            degree = nodes_degree[node]
-            try:
-                if (tour[-1], node) in graph or (node, tour[-1]) in graph:
-                    tour.append(node)
-                    try:
-                        graph.remove((tour[-2], tour[-1]))
-                        nodes_degree[tour[-1]] -= 1     # Updating degree of nodes in the graph, not required but for the sake of completeness.
-                        nodes_degree[tour[-2]] -= 1     # Can also be used to check the correctness of program. In the end all degrees must zero.
-                    except ValueError:
-                        graph.remove((tour[-1], tour[-2]))
-                        nodes_degree[tour[-1]] -= 1
-                        nodes_degree[tour[-2]] -= 1
-            except IndexError:
-                tour.append(node)
-        except StopIteration:
-            loop = enumerate(nodes_degree)
-
-        if len(tour) > 2:
-            if tour[0] == tour[-1]:
-                return tour
-
-def EulerCircuit(G):
-    if(isEulerian(G) == False):
-        print("Graf nie jest eulerowski")
-        return None
-    graph = G.edges()
-    '''This function returns a Eulerian Tour for the input graph.'''
-    tour = getTour(graph)
-
-    if graph:   # If stuck at the beginning, finding additional tour in the graph.
-        loop = enumerate(tour[: -1])
-        l = loop.__next__()
-        i = l[0]
-        node = l[1]
-        try:
-            while True:
-                if node in list(zip(*graph))[0] or node in list(zip(*graph))[1]:
-                    t = getTour(graph)
-                    j = t.index(node)
-                    tour = tour[ : i] + t[j:-1] + t[ :j+1] + tour[i+1: ]        # Joining the two tours.
-                    if not graph:       # Found Eulerian Tour
-                        return tour     # Returning the Eulerian Tour
-                    loop = enumerate(tour[: -1])   
-                l = loop.__next__()
-                i = l[0]
-                node = l[1]
-        except StopIteration: 
-            print("Graf nie jest polaczony")
-            exit()
-    else:     
-        return tour
-"""
 
 def EulerCircuit(G):
     if not isEulerian(G):
@@ -111,30 +61,44 @@ def EulerCircuit(G):
     return stack
 
 def run():
-    plt.clf()
+    global G
+    global t
+    global counter
     G = get('files/euler.txt')
-    #G = randomGraphEdges(6,12)
-    pos = nx.circular_layout(G)
-    nx.draw_networkx_nodes(G, pos)
-    nx.draw_networkx_edges(G, pos)
-    nx.draw_networkx_labels(G, pos)
-    #print(G.edges())
     t = EulerCircuit(G)
-    if (t != None):
-        print (t)
-    plt.axis('off')
-    plt.show()
+    if t != None:
+        for k, v in enumerate(t):
+            if k != len(t) - 1:
+                edges.append((str(t[k]), str(t[k+1])))
+            else:
+                edges.append((str(t[k]), str(t[0])))
+    window = updateWindow()
+    update()
+    window.loop()
+    counter = 0
+    
+def update():
+    global t
+    global G
+    global counter
+    try:
+        plt.clf()
+        pos = nx.circular_layout(G)
+        nx.draw_networkx_nodes(G, pos)
+        nx.draw_networkx_edges(G, pos)
+        print (counter)
+        nx.draw_networkx_edges(G, pos, edgelist=edges[:counter], width = 2, edge_color='#0000ff')
+        nx.draw_networkx_edges(G, pos, edgelist=[edges[counter]], width = 3, edge_color='#ff0000')
+
+        counter += 1
+        nx.draw_networkx_labels(G, pos)
+        #nx.draw_networkx_edges(G,pos,                      edgelist=[(4,5),(5,6),(6,7),(7,4)],                       width=8,alpha=0.5,edge_color='b')
+        plt.axis('off')
+        plt.show()
+    
+    except IndexError as e:
+        print ("Nie ma wiecej krawedzi do oznaczenia")
+        counter = 0
 
 if __name__ == '__main__':
-    #G = get('files/euler.txt')
-    G = randomGraphEdges(6,12)
-    pos = nx.circular_layout(G)
-    nx.draw_networkx_nodes(G, pos)
-    nx.draw_networkx_edges(G, pos)
-    nx.draw_networkx_labels(G, pos)
-    #print(G.edges())
-    t = EulerCircuit(G)
-    if (t != None):
-        print (t)
-    plt.axis('off')
-    plt.show()
+    run()
