@@ -70,7 +70,7 @@ def randomFlowNetwork(numLayers=3, maxFlow=10):
             G.add_edge(t[pos], t[i], weight=random.randint(1, maxFlow))
 
 
-    for i in range(layers[0] + 1, num - 1):
+    for i in range(1, num - 1):
         p = False
         for j in range(i, num - 1):
             if i == j:
@@ -96,5 +96,5 @@ def draw(H):
     plt.show()
     
 if __name__ == '__main__':
-    H = randomFlowNetwork(2, maxFlow=10)
+    H = randomFlowNetwork(3, maxFlow=10)
     draw(H)
