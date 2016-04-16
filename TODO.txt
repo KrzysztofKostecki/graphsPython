@@ -22,9 +22,7 @@
 -sortowanie topologiczne									Tomek
 
 ---------------------------lab5----------------------------------
--Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	
--Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1		Ja
-
+-Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	Ja
 
 --------------------------lab ost--------------------------------
 -Komiwojażer											Kuba
@@ -57,5 +55,6 @@ CO JEST ZROBIONE:
 
 ---------------------------lab5----------------------------------
 -losowa sieć przepływowa.
+-Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1
 
 --------------------------lab ost--------------------------------
