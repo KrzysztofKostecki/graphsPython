@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import random
 
-def randomFlowNetwork(numLayers=3, maxFlow=10):
+def randomFlowNetwork(numLayers=3, maxFlow=10, bipartite=False):
     '''generates randomFlowNetwork on 4 layers with capacity of random integer in range of [1,10]'''
     nodes = {}
     layers = []
@@ -33,59 +33,62 @@ def randomFlowNetwork(numLayers=3, maxFlow=10):
                 if k == j:
                     continue
                 ss = random.randint(0,100)
-                if ss < 10:
+                prg = 10
+                if bipartite:
+                    prg = 50
+                if ss < prg:
                     G.add_edge(j, k, weight = random.randint(1,maxFlow))
                     
     for i in range(1, layers[0] + 1):
         G.add_edge(0, i, weight = random.randint(1,maxFlow))
 
     num = len(G.nodes())
-
-    ii = 0
-    while ed < 10:
-        x = random.randint(0,len(t)-1)
-        y = random.randint(0, len(t)-1)
-        if(x==y or G.has_edge(t[x], t[y]) or y == 0 or x == len(t) -1):
-            continue
-        else:
-            G.add_edge(t[x], t[y], weight = random.randint(1,maxFlow))
-            ed += 1
-
     last = len(t) - 1
     l = layers[len(layers)-1]
     for i in range(last - l, last):
         G.add_edge(t[i], t[last], weight=random.randint(1,10))
 
-
-    for i in range(layers[0],num):
-        p=False
-        for j in range(1, i):
-            if i == j:
+    if bipartite == False:
+        while ed < 10:
+            x = random.randint(0,len(t)-1)
+            y = random.randint(0, len(t)-1)
+            if(x==y or G.has_edge(t[x], t[y]) or y == 0 or x == len(t) -1):
                 continue
-            if G.has_edge(t[j], t[i]):
-                p = True
-                break
-        if p == False:
-            pos = random.randint(1, i-1)
-            G.add_edge(t[pos], t[i], weight=random.randint(1, maxFlow))
+            else:
+                G.add_edge(t[x], t[y], weight = random.randint(1,maxFlow))
+                ed += 1
 
+        for i in range(layers[0],num):
+            p=False
+            for j in range(1, i):
+                if i == j:
+                    continue
+                if G.has_edge(t[j], t[i]):
+                    p = True
+                    break
+            if p == False:
+                pos = random.randint(1, i-1)
+                G.add_edge(t[pos], t[i], weight=random.randint(1, maxFlow))
 
-    for i in range(1, num - 1):
-        p = False
-        for j in range(i, num - 1):
-            if i == j:
-                continue
-            if G.has_edge(t[i], t[j]):
-                p = True
-                break
-        if p == False:
-            pos = random.randint(i+1, num-1)
-            G.add_edge(t[i], t[pos], weight = random.randint(1,maxFlow))
+        for i in range(1, num - 1):
+            p = False
+            for j in range(i, num - 1):
+                if i == j:
+                    continue
+                if G.has_edge(t[i], t[j]):
+                    p = True
+                    break
+            if p == False:
+                pos = random.randint(i+1, num-1)
+                G.add_edge(t[i], t[pos], weight = random.randint(1,maxFlow))
 
     return G
 
-def draw(H):
-    pos = nx.get_node_attributes(H, 'pos')
+def draw(H, tt=True):
+    if tt == True:
+        pos = nx.get_node_attributes(H, 'pos')
+    else:
+        pos = nx.circular_layout(H)
     nx.draw_networkx_nodes(H,pos)
     nx.draw_networkx_edges(H,pos)
     nx.draw_networkx_labels(H,pos)

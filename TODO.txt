@@ -26,7 +26,6 @@
 
 --------------------------lab ost--------------------------------
 -Komiwojażer											Kuba
--Algorytm Hoshena-Kopelmana dla perkolacji węzłowej						Tomek
 
 =========================================================================================================================================
 
@@ -58,3 +57,4 @@ CO JEST ZROBIONE:
 -Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1
 
 --------------------------lab ost--------------------------------
+-Algorytm Hoshena-Kopelmana dla perkolacji węzłowej
