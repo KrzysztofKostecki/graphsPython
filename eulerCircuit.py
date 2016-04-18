@@ -86,7 +86,7 @@ def update():
         pos = nx.circular_layout(G)
         nx.draw_networkx_nodes(G, pos)
         nx.draw_networkx_edges(G, pos)
-        nx.draw_networkx_edges(G, pos, edgelist=edges[:counter], width = 2, edge_color='#0000ff')
+        nx.draw_networkx_edges(G, pos, edgelist=edges[:counter], width = 2, edge_color='#207D0E')
         nx.draw_networkx_edges(G, pos, edgelist=[edges[counter]], width = 3, edge_color='#ff0000')
 
         counter += 1
