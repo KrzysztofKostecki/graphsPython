@@ -3,17 +3,17 @@
 --------------------------lab1---------------------------------
 			!!DONE!!
 
---------------------------lab2---------------------------------					
+--------------------------lab2---------------------------------				
 			!!DONE!!
 								
----------------------------lab3---------------------------------				
+--------------------------lab3---------------------------------				
 -przypisywanie wag krawędziom									Krzysiek
 -algorytm Dijkstry										Krzysiek		   
 -macierz odległości między wszystkimi parami wierzchołków  					Krzysiek
 -wyznaczanie centrum i centrum minimax grafu							Krzysiek
 -minimalne drzewo rozpinające									Krzysiek
 
----------------------------lab4---------------------------------
+--------------------------lab4---------------------------------
 -największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		Tomek
 -algorytm Bellmana-Forda									Tomek
 -algorytm Johnsona										Tomek
@@ -21,11 +21,11 @@
 -losowy digraf acykliczny									Tomek
 -sortowanie topologiczne									Tomek
 
----------------------------lab5----------------------------------
+--------------------------lab5---------------------------------
 -Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	Ja
 
---------------------------lab ost--------------------------------
--Komiwojażer											Kuba
+--------------------------lab6---------------------------------
+			!!DONE!!
 
 =========================================================================================================================================
 
@@ -46,15 +46,16 @@ CO JEST ZROBIONE:
 -sprawdzanie czy graf jest hamiltonowski(mały graf)
 -największa spójna składowa
 
----------------------------lab3---------------------------------
+--------------------------lab3---------------------------------
 -kodowanie digrafów
 -zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki
 
----------------------------lab4---------------------------------
+--------------------------lab4---------------------------------
 
----------------------------lab5----------------------------------
+--------------------------lab5---------------------------------
 -losowa sieć przepływowa.
 -Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1
 
---------------------------lab ost--------------------------------
+--------------------------lab6--------------------------------- DONE
 -Algorytm Hoshena-Kopelmana dla perkolacji węzłowej
+-Komiwojażer
