@@ -61,7 +61,7 @@ Plik: data.txt computed distance: 967.34	time: 70.56 temp_begin: 10000000		temp_
 Plik: data.txt computed distance: 991.92	time: 70.55 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
 Plik: data.txt computed distance: 927.02	time: 70.31 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
 Plik: data.txt computed distance: 961.91	time: 70.27 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
-Plik: data.txt computed distance: 1023.53	time: 69.84 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
+Plik: data.txt computed distance: 830.97	time: 69.84 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
 Plik: data.txt computed distance: 973.86	time: 69.61 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
 Plik: data.txt computed distance: 1045.78	time: 69.95 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
 Plik: data.txt computed distance: 952.73	time: 70.03 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
@@ -99,3 +99,7 @@ Plik: data.txt computed distance: 926.91	time: 69.61 temp_begin: 10000000		temp_
 Plik: data.txt computed distance: 986.52	time: 68.19 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
 Plik: data.txt computed distance: 968.23	time: 70.25 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
 Plik: data.txt computed distance: 983.48	time: 70.40 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
+Plik: data.txt computed distance: 1047.27	time: 285.49 temp_begin: 1000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2532831
+Plik: data.txt computed distance: 933.83	time: 72.88 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
+Plik: data.txt computed distance: 915.17	time: 94.36 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
+Plik: data.txt computed distance: 925.20	time: 89.98 temp_begin: 10000000		temp_end: 1e-05 cooling factor 0.99999	iterations: 2763089
