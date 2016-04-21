@@ -1,8 +1,8 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def readFromFileW():
-    with open("files/adjListW.txt", 'r') as f:
+def readFromFileW(path):
+    with open(path, 'r') as f:
         tab = f.readlines()
 		
     edgelist = []
@@ -16,11 +16,11 @@ def readFromFileW():
                 z += '}'
             edgelist.append(z)
         x += 1
-
     return nx.parse_edgelist(edgelist, nodetype = int)
-
+    
+'''
 if __name__ == '__main__':
-    G = readFromFileW()
+    G = readFromFileW('files/adjListW.txt')
     pos = nx.circular_layout(G)
     nx.draw_networkx_nodes(G, pos)
     nx.draw_networkx_edges(G, pos)
@@ -30,3 +30,4 @@ if __name__ == '__main__':
     nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels)
     plt.axis('off')
     plt.show()
+'''

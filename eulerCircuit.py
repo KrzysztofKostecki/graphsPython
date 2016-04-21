@@ -10,25 +10,20 @@ t = None
 counter = 0
 
 class updateWindow(Window):
-    def __init__(self):
+    def __init__(self,G):
         super(updateWindow, self).__init__()
         self.root.wm_title="nastepny krok"
-        b1 = tk.Button(self.root, text="Nastepny krok", width=20, height=5, command= update).grid(row=1, column=0)
+        b1 = tk.Button(self.root, text="Nastepny krok", width=20, height=5, command= lambda: update(G)).grid(row=1, column=0)
         
     def loop(self):
         global counter
         counter = 0
         self.root.mainloop()
         
-def update():
-    pass
-        
 def isEulerian(G):
     for v,d in G.degree_iter():
         if d % 2 != 0:
             return False
-    '''if not nx.is_connected(G):
-        return False'''
     return True
 
 def EulerCircuit(G):
@@ -72,7 +67,7 @@ def run():
                 edges.append((str(t[k]), str(t[k+1])))
             else:
                 edges.append((str(t[k]), str(t[0])))
-    window = updateWindow()
+    window = updateWindow(G)
     update()
     window.loop()
     counter = 0
@@ -91,7 +86,6 @@ def update():
 
         counter += 1
         nx.draw_networkx_labels(G, pos)
-        #nx.draw_networkx_edges(G,pos,                      edgelist=[(4,5),(5,6),(6,7),(7,4)],                       width=8,alpha=0.5,edge_color='b')
         plt.axis('off')
         plt.show()
     
