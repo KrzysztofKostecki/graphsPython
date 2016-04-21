@@ -20,8 +20,9 @@ class Edge(object):
         self.source = u
         self.sink = v  
         self.capacity = w
+        
     def __repr__(self):
-        return "%s->%s:%s" % (self.source, self.sink, self.capacity)
+        return "%s %s" % (self.source, self.sink)
 
 class FlowNetwork(object):
     def __init__(self):
@@ -71,12 +72,16 @@ class FlowNetwork(object):
             path = self.find_path(source, sink, [])
         return sum(self.flow[edge] for edge in self.get_edges(source))
     
-    def matching(self):
+    def matching(self, last):
         for key in self.flow:
             if self.flow[key] == 1:
-                print (key)
+                tab = str(key).split(' ')
+                if '0' in tab or str(last) in tab:
+                    continue
+                yield str(key)
     
 if __name__ == '__main__':
+    '''
     G = rfn.randomFlowNetwork(3, 10)
     mat = getMatrix(G)
     network = FlowNetwork()
@@ -86,16 +91,18 @@ if __name__ == '__main__':
                 network.add_edge(k, i, mat[k][i])
     print(network.max_flow(0, len(G.nodes())-1))
     rfn.draw(G, True)
-    
-    H = rfn.randomFlowNetwork(3, 10, True)
-    mat = getMatrix(G)
+    '''
+    H = rfn.randomFlowNetwork(4, 1, True)
+    mat = getMatrix(H)
     network = FlowNetwork()
     for k, v in enumerate(mat):
         for i, j in enumerate(v):
             if mat[k][i] != 0:
                 network.add_edge(k, i, mat[k][i])
-    print(network.max_flow(0, len(G.nodes())-1))
-    network.matching()
-    rfn.draw(G, True)   
+    print(network.max_flow(0, len(H.nodes())-1))
+    edges = []
+    for i in network.matching(len(H.nodes())-1):
+        edges.append(tuple([int(j) for j in i.split(' ')]))
+    rfn.draw(H, True, edges, True)
 
     
