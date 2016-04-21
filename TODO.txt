@@ -7,14 +7,11 @@
 			!!DONE!!
 								
 --------------------------lab3---------------------------------				
--przypisywanie wag krawędziom									Krzysiek
--algorytm Dijkstry										Krzysiek		   
 -macierz odległości między wszystkimi parami wierzchołków  					Krzysiek
 -wyznaczanie centrum i centrum minimax grafu							Krzysiek
 -minimalne drzewo rozpinające									Krzysiek
 
 --------------------------lab4---------------------------------
--największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom		Tomek
 -algorytm Bellmana-Forda									Tomek
 -algorytm Johnsona										Tomek
 -algorytm Floyda-Warshalla									Tomek
@@ -22,10 +19,11 @@
 -sortowanie topologiczne									Tomek
 
 --------------------------lab5---------------------------------
--Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym	Ja
+			!!DONE!!
 
 --------------------------lab6---------------------------------
 			!!DONE!!
+poprawki: komiwojażer(cykl) + wykresy
 
 =========================================================================================================================================
 
@@ -49,12 +47,16 @@ CO JEST ZROBIONE:
 --------------------------lab3---------------------------------
 -kodowanie digrafów
 -zamiana zwykłego grafu na digraf zmieniając krawędzie na skierowane łuki
+-przypisywanie wag krawędziom
+-algorytm Dijkstry
 
 --------------------------lab4---------------------------------
+-największa silnie spója składowa -> samodzielny digraf przypisywanie wag krawędziom
 
---------------------------lab5---------------------------------
+--------------------------lab5--------------------------------- DONE
 -losowa sieć przepływowa.
 -Algorytm Forda-Fulkersona -> znalezienie maksymalnego przepływu na sieci z zad1
+-Algorytm Forda-Fulkersona -> znalezienie najliczniejszego skojarzenia na grafie dwudzielnym
 
 --------------------------lab6--------------------------------- DONE
 -Algorytm Hoshena-Kopelmana dla perkolacji węzłowej
